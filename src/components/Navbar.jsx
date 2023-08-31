@@ -1,67 +1,75 @@
 import "../styles/Navbar.css";
 import gorillaSystem from '../assets/icons/gorilla.png';
 import developmentIcon from '../assets/icons/development.png';
+import walletsIcon from '../assets/icons/wallet-solid.svg';
+import normalIcon from '../assets/icons/normal.png';
+import newsIcon from '../assets/icons/newspaper-solid.svg';
+import settingsIcon from '../assets/icons/gears-solid.svg';
+import toolsIcon from '../assets/icons/screwdriver-wrench-solid.svg';
+import helpIcon from '../assets/icons/question-solid.svg';
+import logoutIcon from '../assets/icons/right-from-bracket-solid.svg';
+import { v4 as uuidv4 } from 'uuid';
 
 function Navbar() {
   const linkArray = [
     { name: "Gorilla System", 
-      id: 1, 
+      id: uuidv4(), 
       url: "#",
       img: gorillaSystem,
     },
     {
       name: "LS-Web Development",
-      id: 2,
+      id: uuidv4() ,
       url: "http://www.lucianosardanha.com/",
       img: developmentIcon, 
     },
     { 
       name: "Wallets", 
-      id: 3, 
+      id: uuidv4() ,
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/wallets.png'  
+      img: walletsIcon, 
     },
     { 
       name: "Normal", 
-      id: 4, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/normal.png'  
+      img: normalIcon,
     },
     { 
       name: "News", 
-      id: 5, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/news.png'  
+      img: newsIcon, 
     },
     { 
       name: "Settings", 
-      id: 6, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/settings.png'  
+      img: settingsIcon, 
     },
     { 
       name: "Tools", 
-      id: 7, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/tools.png'  
+      img: toolsIcon,  
     },
     { 
       name: "Help", 
-      id: 8, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/help.png'  
+      img: helpIcon, 
     },
     { 
       name: "Log out", 
-      id: 9, 
+      id: uuidv4(), 
       url: "http://www.lucianosardanha.com/",
-      img: '../assets/icons/logout.png'  
+      img: logoutIcon,
     },
   ];
   const linkList = linkArray.map((link) => (
-     <li className="links-li" key={link.name}>
+     <li className="links-li" key={link.id}>
       <a key={link.id} href={link.url} target="_blanc">
-      <img className="link-img" src={link.img} key={link.name} alt={link.name} />&nbsp;{link.name}
+      <img className="link-img" src={link.img} key={link.id} alt={link.name} />&nbsp;{link.name}
       </a>
     </li>
     
