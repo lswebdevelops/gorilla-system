@@ -1,0 +1,42 @@
+/* Estilização da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para as células de dados da tabela */
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para a primeira coluna (Ativo) */
+td:first-child {
+  font-weight: bold;
+}
+
+/* Estilo para a última linha (Total) */
+tr:last-child {
+  background-color: #ddd;
+}
+
+/* Estilo para a porcentagem (%) */
+td:nth-child(3) {
+  color: #007bff;
+}
+
+/* Estilo para a célula de valor total */
+td:nth-child(2):last-child {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}

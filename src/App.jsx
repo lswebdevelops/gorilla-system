@@ -1,16 +1,28 @@
-import { Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Networth from "./components/Networth";
+import "./index.css";
+import Assets from "./components/Assets";
+import Finances from "./components/Finances";
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello from the main page of the app!</h1>
-      <p>Here are some examples of links to other pages</p>
-      <nav>
-      <ul>
-        <li><Link to="profile">Profile page</Link></li>
-      </ul>
-      </nav>
-    </div>
+    <BrowserRouter>
+      <header>
+        <Link to={"/"}>Gorilla System</Link> {/* >> home */}
+        <nav>
+          <Link to={"/networth"}>Networth</Link>
+          <Link to={"/assets"}>Assets</Link>
+          <Link to={"/finances"}>Finances</Link>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/networth" element={<Networth />} />
+        <Route path="/assets" element={<Assets />} />
+        <Route path="/finances" element={<Finances />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
