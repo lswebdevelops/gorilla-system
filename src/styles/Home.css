@@ -1,0 +1,23 @@
+.investiment-types-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 43px;
+}
+
+.investiment-types-img-container-intern-div {
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: white;
+  padding:5% 10% 1% 10%;
+  border-radius: 12px;
+}
+.investiment-types-img-container-intern-div img {
+  width: 100%;
+  border-radius: 12px;
+
+}
+.investiment-types-img-container-intern-div *:hover {
+    opacity: 0.8;
+  }
