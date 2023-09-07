@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const InvestmentTypes = () => {
-  const {params} = useParams();
+  const params = useParams();
   const [investmentType, setInvestmentType] = useState(null);
 
   useEffect(() => {
