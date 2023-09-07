@@ -1,28 +1,23 @@
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import Home from "./components/Home";
-import Networth from "./components/Networth";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import Networth from "./pages/Networth";
 import "./index.css";
-import Assets from "./components/Assets";
-import Finances from "./components/Finances";
-import InvestmentTypes from "./components/InvestmentTypes";
+import Assets from "./pages/Assets";
+import Finances from "./pages/Finances";
+import InvestmentTypes from "./pages/InvestmentTypes";
+import Layout from "./components/Layout";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <header>
-        <Link to={"/"}>Gorilla System</Link> {/* >> home */}
-        <ul>
-          <Link to={"/networth"}>Networth</Link>
-          <Link to={"/assets"}>Assets</Link>
-          <Link to={"/finances"}>Finances</Link>
-        </ul>
-      </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<InvestmentTypes />} />
-        <Route path="/networth" element={<Networth />} />
-        <Route path="/assets" element={<Assets />} />
-        <Route path="/finances" element={<Finances />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<InvestmentTypes />} />
+          <Route path="/networth" element={<Networth />} />
+          <Route path="/assets" element={<Assets />} />
+          <Route path="/finances" element={<Finances />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
