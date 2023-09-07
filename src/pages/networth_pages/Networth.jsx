@@ -1,4 +1,4 @@
-import "../styles/Networth.css";
+import "../../styles/Networth.css";
 
 const Networth = () => {
 
