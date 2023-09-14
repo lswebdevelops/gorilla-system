@@ -1,13 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-Link;
 const PersonalFinancesLayout = () => {
   return (
     <>
       <nav>
-        <Link to={"/finances/personalfinances/details"}>Details</Link>
-        <Link to={"/finances/personalfinances/personalfinancesconsolidated"}>Consolidated</Link>
-        <Link to={"/finances/personalfinances/graphics"}>Graphics</Link>      
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/finances/personalfinances/details"}>Details</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/finances/personalfinances/personalfinancesconsolidated"}>Consolidated</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/finances/personalfinances/graphics"}>Graphics</NavLink>      
       </nav>
       <Outlet />
     </>

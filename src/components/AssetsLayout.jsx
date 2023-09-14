@@ -1,19 +1,19 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const assetsLayout = () => {
   return (
     <>
       <nav>
-        <Link to={"/assets"}>Assets</Link>
-        <Link to={"/assets/bonds"}>Bonds</Link>
-        <Link to={"/assets/assetnotes"}>Notes</Link>
-        <Link to={"/assets/emergencyfund"}>Emergency</Link>
-        <Link to={"/assets/fixedincome"}>Fixed Income</Link>
-        <Link to={"/assets/realestate"}>Real Estate</Link>
-        <Link to={"/assets/reits"}>REITs</Link>
-        <Link to={"/assets/stocks"}>Stocks</Link>
-        <Link to={"/assets/valuereserve"}>Reserve of Value</Link>
-        <Link to={"/assets/wheretoinvest"}>Where to Invest</Link>
+        {/* <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets"}>Assets</NavLink> */}
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/bonds"}>Bonds</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/assetnotes"}>Notes</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/emergencyfund"}>Emergency</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/fixedincome"}>Fixed Income</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/realestate"}>Real Estate</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/reits"}>REITs</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/stocks"}>Stocks</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/valuereserve"}>Reserve of Value</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets/wheretoinvest"}>Where to Invest</NavLink>
       </nav>
       <Outlet />
     </>

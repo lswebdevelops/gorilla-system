@@ -1,12 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const NetworthLayout = () => {
   return (
     <>     
       <nav>
-        <Link to={"networth/consolidated"}>Consolidated</Link>
-        <Link to={"networth/diversification"}>Diversification</Link>
-        <Link to={"networth/holding"}>Holding</Link>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/consolidated"}>Consolidated</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/diversification"}>Diversification</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/holding"}> Holding </NavLink>
       </nav>
       <Outlet />
     </>
