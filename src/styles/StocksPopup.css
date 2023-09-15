@@ -1,0 +1,57 @@
+
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 10px 45px 20px 45px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  textarea {
+    width: 350px;
+    height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .button-notes {
+    position: relative;
+    top: -210px;
+    right: -10px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .button-notes:last-child {
+    margin-right: 0;
+    background-color: #35dc75;
+  }
+  
+  .note-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  

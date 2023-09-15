@@ -15,7 +15,6 @@ th {
 
 td {
   border: 1px solid #dddddd;
-  text-align: left;
   padding: 8px;
   text-align: center;
   border:none;
@@ -23,7 +22,7 @@ td {
 }
 
 .goal-input {
-  text-align: right;
+  text-align: center;
   border: none;
   margin: 0;
   font-size: large;
@@ -44,5 +43,8 @@ td {
 
 .goal-input-td-highlighted {
    color: red;
-   font-size: 2rem;;
+   font-size: 1.4rem;;
+}
+.notebook {
+  width: 30px;  
 }

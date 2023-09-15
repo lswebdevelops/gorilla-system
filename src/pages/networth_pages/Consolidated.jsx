@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../../styles/Consolidated.css";
+import "../../styles/PopupNotebook.css";
+import StocksPopup from "../../components/StocksPopup";
+
 const Consolidated = () => {
   const [inputValues, setInputValues] = useState({
     emergencyFundInput: 0,
@@ -22,7 +25,8 @@ const Consolidated = () => {
       [name]: parseFloat(value), // converting inputs to numbers
     });
   };
-  // function to calvculate the sum and update the result
+
+  // function to calculate the sum and update the result
   const calculateSum = () => {
     const sum =
       inputValues.emergencyFundInput +
@@ -35,6 +39,22 @@ const Consolidated = () => {
       inputValues.stocksInput;
     setResult(sum);
   };
+
+  // adding notes
+  const [isStocksPopupOpen, setIsStocksPopupOpen] = useState(false);
+  const [stocksNote, setStocksNote] = useState("");
+
+  const handleOpenStocksPopup = () => {
+    setIsStocksPopupOpen(true);
+  };
+  const handleCloseStocksPopup = () => {
+    setIsStocksPopupOpen(false);
+  };
+
+  const handleSaveStocksNote = (updatedNote) => {
+    setStocksNote(updatedNote);
+  };
+
   return (
     <>
       <h1>Consolidated</h1>
@@ -68,8 +88,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Brazilian Stocks</td>
@@ -88,8 +114,22 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  onClick={handleOpenStocksPopup}
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+                {isStocksPopupOpen && (
+                  <StocksPopup
+                    onSave={handleSaveStocksNote}
+                    onClose={handleCloseStocksPopup}
+                    noteText={stocksNote}
+                  />
+                )}
+              </td>
             </tr>
             <tr>
               <td>Bonds</td>
@@ -108,8 +148,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Brazilian Real Estate(FIIs)</td>
@@ -128,8 +174,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Other</td>
@@ -148,8 +200,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>REITs</td>
@@ -168,8 +226,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Brazilian Treasure</td>
@@ -188,8 +252,14 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Stocks</td>
@@ -208,28 +278,46 @@ const Consolidated = () => {
                 />
                 %
               </td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Subtotal</td>
               <td>$ {0}</td>
               <td>{0}%</td>
               <td className={"goal-input-td"}>{}</td>
-              <td>{}</td>
-              <td>📝</td>
+              <td></td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Debt</td>
               <td>$ {0}</td>
               <td></td>
               <td className={"goal-input-td"}>{}</td>
-              <td>{}</td>
-              <td>📝</td>
+              <td>✔</td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
             <tr>
               <td>Total</td>
-              <td>{}</td>
+              <td></td>
               <td></td>
               <td
                 className={
@@ -241,8 +329,14 @@ const Consolidated = () => {
                 {result}%<button onClick={calculateSum}>✔</button>
               </td>
 
-              <td>{}</td>
-              <td>📝</td>
+              <td></td>
+              <td>
+                <img
+                  className="notebook"
+                  src="/src/assets/icons/icons8-notes-240.png"
+                  alt="notebook"
+                />
+              </td>
             </tr>
           </tbody>
         </table>
