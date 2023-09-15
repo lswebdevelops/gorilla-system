@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import '../styles/StocksPopup.css'
+import { useState } from "react";
+import PropTypes from "prop-types";
+import "../../styles/popups/StocksPopup.css";
 
 function StocksPopup({ onSave, onClose, noteText }) {
   const [note, setNote] = useState(noteText);
@@ -17,7 +17,9 @@ function StocksPopup({ onSave, onClose, noteText }) {
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
-        <button className='button-notes' onClick={handleSave}>✔</button>
+        <button className="button-notes" onClick={handleSave}>
+          ✔
+        </button>
       </div>
     </div>
   );

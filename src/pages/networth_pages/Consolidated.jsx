@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../styles/Consolidated.css";
-import "../../styles/PopupNotebook.css";
-import StocksPopup from "../../components/StocksPopup";
+import StocksPopup from "../../components/popups/StocksPopup";
+import EmergencyFundPopup from "../../components/popups/EmergencyFundPopup";
 
 const Consolidated = () => {
   const [inputValues, setInputValues] = useState({
@@ -41,6 +41,7 @@ const Consolidated = () => {
   };
 
   // adding notes
+  // stocks
   const [isStocksPopupOpen, setIsStocksPopupOpen] = useState(false);
   const [stocksNote, setStocksNote] = useState("");
 
@@ -54,6 +55,23 @@ const Consolidated = () => {
   const handleSaveStocksNote = (updatedNote) => {
     setStocksNote(updatedNote);
   };
+// emergency fund
+
+const [isEmergencyFundOpen, setIsEmergencyFundOpen ] = useState(false);
+const [ emergencyFundNote, setEmergencyFundNote ]  = useState("")
+
+const handleOpenEmergencyFundPopup = () => {
+  setIsEmergencyFundOpen(true);
+}
+
+const handleCloseEmergencyFundPopup = () => {
+  setIsEmergencyFundOpen(false);
+};
+
+const handleSaveEmergencyFundNote = (updatedNote) => {
+  setEmergencyFundNote(updatedNote);
+};
+
 
   return (
     <>
@@ -91,10 +109,18 @@ const Consolidated = () => {
               <td>✔</td>
               <td>
                 <img
+                onClick={handleOpenEmergencyFundPopup}
                   className="notebook"
                   src="/src/assets/icons/icons8-notes-240.png"
                   alt="notebook"
                 />
+                {isEmergencyFundOpen && (
+                  <EmergencyFundPopup
+                    onSave={handleSaveEmergencyFundNote}
+                    onClose={handleCloseEmergencyFundPopup}
+                    noteText={emergencyFundNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -117,18 +143,10 @@ const Consolidated = () => {
               <td>✔</td>
               <td>
                 <img
-                  onClick={handleOpenStocksPopup}
                   className="notebook"
                   src="/src/assets/icons/icons8-notes-240.png"
                   alt="notebook"
                 />
-                {isStocksPopupOpen && (
-                  <StocksPopup
-                    onSave={handleSaveStocksNote}
-                    onClose={handleCloseStocksPopup}
-                    noteText={stocksNote}
-                  />
-                )}
               </td>
             </tr>
             <tr>
@@ -281,10 +299,18 @@ const Consolidated = () => {
               <td>✔</td>
               <td>
                 <img
+                  onClick={handleOpenStocksPopup}
                   className="notebook"
                   src="/src/assets/icons/icons8-notes-240.png"
                   alt="notebook"
                 />
+                {isStocksPopupOpen && (
+                  <StocksPopup
+                    onSave={handleSaveStocksNote}
+                    onClose={handleCloseStocksPopup}
+                    noteText={stocksNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
