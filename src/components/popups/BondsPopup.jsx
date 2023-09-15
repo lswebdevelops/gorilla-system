@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles/popups/StocksPopup.css";
 
-function StocksPopup({ onSave, onClose, noteText }) {
+function BondsPopup({ onSave, onClose, noteText }) {
   const [note, setNote] = useState(noteText);
   const handleSave = () => {
     onSave(note);
@@ -11,9 +11,9 @@ function StocksPopup({ onSave, onClose, noteText }) {
   return (
     <div className="popup">
       <div className="popup-content">
-        <h2>Stocks</h2>
+        <h2>Bonds</h2>
         <textarea
-          placeholder="Add your note about stocks..."
+          placeholder="Add your note about bonds..."
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
@@ -27,9 +27,9 @@ function StocksPopup({ onSave, onClose, noteText }) {
     </div>
   );
 }
-StocksPopup.propTypes = {
+BondsPopup.propTypes = {
   onSave: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   noteText: PropTypes.string,
 };
-export default StocksPopup;
+export default BondsPopup;

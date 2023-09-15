@@ -2,7 +2,7 @@
 
 table {
   width: 100%;
-  border-collapse: collapse ;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
@@ -17,8 +17,7 @@ td {
   border: 1px solid #dddddd;
   padding: 8px;
   text-align: center;
-  border:none;
-
+  /* border: none; */
 }
 
 .goal-input {
@@ -26,7 +25,7 @@ td {
   border: none;
   margin: 0;
   font-size: large;
-  background-color: #fff7ed;;
+  background-color: #fff7ed;
   width: 80%;
 }
 .goal-input:hover {
@@ -42,9 +41,32 @@ td {
 }
 
 .goal-input-td-highlighted {
-   color: red;
-   font-size: 1.4rem;;
+  color: red;
+  font-size: 1.4rem;
 }
 .notebook {
-  width: 30px;  
+  width: 30px;
+  height: 30px;
+  background-image: url("/src/assets/icons/icons8-notes-240.png");
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensure the image fits within the container */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  border: none;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.notebook:hover {
+  cursor: pointer;
+}
+/*  change icon when note is edited:  */
+.new-icon {
+  border: none;
+  border-radius: 5px;
+  background-image: none;
+  background-image: url("/src/assets/icons/iconsEdited.png");
+  margin: 0;
+  padding: 0;
 }

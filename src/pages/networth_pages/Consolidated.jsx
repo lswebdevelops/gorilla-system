@@ -2,6 +2,13 @@ import { useState } from "react";
 import "../../styles/Consolidated.css";
 import StocksPopup from "../../components/popups/StocksPopup";
 import EmergencyFundPopup from "../../components/popups/EmergencyFundPopup";
+import BrazilianStocksPopups from "../../components/popups/BrazilianStocksPopup";
+import BondsPopup from "../../components/popups/BondsPopup";
+import BrazilianRealEstatePopup from "../../components/popups/BrazilianRealEstatePopup";
+import OthersPopup from "../../components/popups/OthersPopup";
+import REITsPopup from "../../components/popups/REITsPopup";
+import BrazilianTreasurePopup from "../../components/popups/BrazilianTreasurePopup";
+import DebtPopup from "../../components/popups/DebtPopup";
 
 const Consolidated = () => {
   const [inputValues, setInputValues] = useState({
@@ -41,9 +48,29 @@ const Consolidated = () => {
   };
 
   // adding notes
-  // stocks
+  // emergency fund Popup
+
+  const [isEmergencyFundOpen, setIsEmergencyFundOpen] = useState(false);
+  const [emergencyFundNote, setEmergencyFundNote] = useState("");
+  const [isEmergencyFundEdited, setIsEmergencyFundEdited] = useState(false); // Track edit status
+
+  const handleOpenEmergencyFundPopup = () => {
+    setIsEmergencyFundOpen(true);
+  };
+
+  const handleCloseEmergencyFundPopup = () => {
+    setIsEmergencyFundOpen(false);
+  };
+
+  const handleSaveEmergencyFundNote = (updatedNote) => {
+    setEmergencyFundNote(updatedNote);
+    setIsEmergencyFundEdited(true); // Set the edit status to true when the note is edited
+  };
+
+  // stocks Popup
   const [isStocksPopupOpen, setIsStocksPopupOpen] = useState(false);
   const [stocksNote, setStocksNote] = useState("");
+  const [isStocksNoteEdited, setIsStocksNoteEdited] = useState(false); // Track edit status
 
   const handleOpenStocksPopup = () => {
     setIsStocksPopupOpen(true);
@@ -54,24 +81,127 @@ const Consolidated = () => {
 
   const handleSaveStocksNote = (updatedNote) => {
     setStocksNote(updatedNote);
+    setIsStocksNoteEdited(true); // Set the edit status to true when the note is edited
   };
-// emergency fund
 
-const [isEmergencyFundOpen, setIsEmergencyFundOpen ] = useState(false);
-const [ emergencyFundNote, setEmergencyFundNote ]  = useState("")
+  // brazilian stocks:Popup
+  const [isbrazilianStocksPopupOpen, setIsbrazilianStocksPopupOpen] =
+    useState(false);
+  const [brazilianstocksNote, setbrazilianStocksNote] = useState("");
+  const [isBrazilianStocksNoteEdited, setIsBrazilianStocksNoteEdited] =
+    useState(false); // Track edit status
 
-const handleOpenEmergencyFundPopup = () => {
-  setIsEmergencyFundOpen(true);
-}
+  const handleOpenBrazilianStocksPopup = () => {
+    setIsbrazilianStocksPopupOpen(true);
+  };
+  const handleCloseBrazilianStocksPopup = () => {
+    setIsbrazilianStocksPopupOpen(false);
+  };
 
-const handleCloseEmergencyFundPopup = () => {
-  setIsEmergencyFundOpen(false);
-};
+  const handleSaveBrazilianStocksNote = (updatedNote) => {
+    setbrazilianStocksNote(updatedNote);
+    setIsBrazilianStocksNoteEdited(true); // Set the edit status to true when the note is edited
+  };
 
-const handleSaveEmergencyFundNote = (updatedNote) => {
-  setEmergencyFundNote(updatedNote);
-};
 
+  // bonds Popup
+  const [isBondsPopupOpen, setIsBondsPopupOpen] = useState(false);
+  const [bondsNote, setBondsNote] = useState("");
+  const [isBondsNoteEdited, setIsBondsNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenBondsPopup = () => {
+    setIsBondsPopupOpen(true);
+  };
+  const handleCloseBondsPopup = () => {
+    setIsBondsPopupOpen(false);
+  };
+
+  const handleSaveBondsNote = (updatedNote) => {
+    setBondsNote(updatedNote);
+    setIsBondsNoteEdited(true); // Set the edit status to true when the note is edited
+  };
+  // Brazilian Real Estate Popup
+  const [isBrazilianRealEstatePopupOpen, setIsBrazilianRealEstatePopupOpen] = useState(false);
+  const [brazilianRealEstateNote, setBrazilianRealEstateNote] = useState("");
+  const [isBrazilianRealEstateNoteEdited, setIsBrazilianRealEstateNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenBrazilianRealEstatePopup = () => {
+    setIsBrazilianRealEstatePopupOpen(true);
+  };
+  const handleCloseBrazilianRealEstatePopup = () => {
+    setIsBrazilianRealEstatePopupOpen(false);
+  };
+
+  const handleSaveBrazilianRealEstateNote = (updatedNote) => {
+    setBrazilianRealEstateNote(updatedNote);
+    setIsBrazilianRealEstateNoteEdited(true); // Set the edit status to true when the note is edited
+  };
+
+
+  // others Popup
+  const [isOthersPopupOpen, setIsOthersPopupOpen] = useState(false);
+  const [othersNote, setOthersNote] = useState("");
+  const [isOthersNoteEdited, setIsOthersNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenOthersPopup = () => {
+    setIsOthersPopupOpen(true);
+  };
+  const handleCloseOthersPopup = () => {
+    setIsOthersPopupOpen(false);
+  };
+
+  const handleSaveOthersNote = (updatedNote) => {
+    setOthersNote(updatedNote);
+    setIsOthersNoteEdited(true); // Set the edit status to true when the note is edited
+  };
+  // REITs Popup
+  const [isREITsPopupOpen, setIsREITsPopupOpen] = useState(false);
+  const [rEITsNote, setREITsNote] = useState("");
+  const [isREITsNoteEdited, setIsREITsNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenREITsPopup = () => {
+    setIsREITsPopupOpen(true);
+  };
+  const handleCloseREITsPopup = () => {
+    setIsREITsPopupOpen(false);
+  };
+
+  const handleSaveREITsNote = (updatedNote) => {
+    setREITsNote(updatedNote);
+    setIsREITsNoteEdited(true); // Set the edit status to true when the note is edited
+  };
+  // Brazilian Treasure Popup
+  const [isBrazilianTreasurePopupOpen, setIsBrazilianTreasurePopupOpen] = useState(false);
+  const [brazilianTreasureNote, setBrazilianTreasureNote] = useState("");
+  const [isBrazilianTreasureNoteEdited, setIsBrazilianTreasureNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenBrazilianTreasurePopup = () => {
+    setIsBrazilianTreasurePopupOpen(true);
+  };
+  const handleCloseBrazilianTreasurePopup = () => {
+    setIsBrazilianTreasurePopupOpen(false);
+  };
+
+  const handleSaveBrazilianTreasureNote = (updatedNote) => {
+    setBrazilianTreasureNote(updatedNote);
+    setIsBrazilianTreasureNoteEdited(true); // Set the edit status to true when the note is edited
+  };
+  // DebtPopup
+  const [isDebtPopupOpen, setIsDebtPopupOpen] = useState(false);
+  const [debtNote, setDebtNote] = useState("");
+  const [isDebtNoteEdited, setIsDebtNoteEdited] = useState(false); // Track edit status
+
+  const handleOpenDebtPopup = () => {
+    setIsDebtPopupOpen(true);
+  };
+  const handleCloseDebtPopup = () => {
+    setIsDebtPopupOpen(false);
+  };
+
+  const handleSaveDebtNote = (updatedNote) => {
+    setDebtNote(updatedNote);
+    setIsDebtNoteEdited(true); // Set the edit status to true when the note is edited
+  };
 
   return (
     <>
@@ -108,12 +238,12 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                onClick={handleOpenEmergencyFundPopup}
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+                <button
+                  onClick={handleOpenEmergencyFundPopup}
+                  className={`notebook ${
+                    isEmergencyFundEdited ? "new-icon" : ""
+                  }`}
+                ></button>
                 {isEmergencyFundOpen && (
                   <EmergencyFundPopup
                     onSave={handleSaveEmergencyFundNote}
@@ -142,11 +272,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+                <button
+                  onClick={handleOpenBrazilianStocksPopup}
+                  className={`notebook ${
+                    isBrazilianStocksNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isbrazilianStocksPopupOpen && (
+                  <BrazilianStocksPopups
+                    onSave={handleSaveBrazilianStocksNote}
+                    onClose={handleCloseBrazilianStocksPopup}
+                    noteText={brazilianstocksNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -168,11 +306,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenBondsPopup}
+                  className={`notebook ${
+                    isBondsNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isBondsPopupOpen && (
+                  <BondsPopup
+                    onSave={handleSaveBondsNote}
+                    onClose={handleCloseBondsPopup}
+                    noteText={bondsNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -194,11 +340,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenBrazilianRealEstatePopup}
+                  className={`notebook ${
+                    isBrazilianRealEstateNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isBrazilianRealEstatePopupOpen && (
+                  <BrazilianRealEstatePopup
+                    onSave={handleSaveBrazilianRealEstateNote}
+                    onClose={handleCloseBrazilianRealEstatePopup}
+                    noteText={brazilianRealEstateNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -220,11 +374,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenOthersPopup}
+                  className={`notebook ${
+                    isOthersNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isOthersPopupOpen && (
+                  <OthersPopup
+                    onSave={handleSaveOthersNote}
+                    onClose={handleCloseOthersPopup}
+                    noteText={othersNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -246,11 +408,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenREITsPopup}
+                  className={`notebook ${
+                    isREITsNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isREITsPopupOpen && (
+                  <REITsPopup
+                    onSave={handleSaveREITsNote}
+                    onClose={handleCloseREITsPopup}
+                    noteText={rEITsNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -272,11 +442,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenBrazilianTreasurePopup}
+                  className={`notebook ${
+                    isBrazilianTreasureNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isBrazilianTreasurePopupOpen && (
+                  <BrazilianTreasurePopup
+                    onSave={handleSaveBrazilianTreasureNote}
+                    onClose={handleCloseBrazilianTreasurePopup}
+                    noteText={brazilianTreasureNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -298,12 +476,12 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               </td>
               <td>✔</td>
               <td>
-                <img
+                <button
                   onClick={handleOpenStocksPopup}
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+                  className={`notebook ${
+                    isStocksNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
                 {isStocksPopupOpen && (
                   <StocksPopup
                     onSave={handleSaveStocksNote}
@@ -320,11 +498,7 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               <td className={"goal-input-td"}>{}</td>
               <td></td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+                
               </td>
             </tr>
             <tr>
@@ -334,11 +508,19 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
               <td className={"goal-input-td"}>{}</td>
               <td>✔</td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+              <button
+                  onClick={handleOpenDebtPopup}
+                  className={`notebook ${
+                    isDebtNoteEdited ? "new-icon" : ""
+                  }`}
+                ></button>
+                {isDebtPopupOpen && (
+                  <DebtPopup
+                    onSave={handleSaveDebtNote}
+                    onClose={handleCloseDebtPopup}
+                    noteText={debtNote}
+                  />
+                )}
               </td>
             </tr>
             <tr>
@@ -357,11 +539,7 @@ const handleSaveEmergencyFundNote = (updatedNote) => {
 
               <td></td>
               <td>
-                <img
-                  className="notebook"
-                  src="/src/assets/icons/icons8-notes-240.png"
-                  alt="notebook"
-                />
+                
               </td>
             </tr>
           </tbody>

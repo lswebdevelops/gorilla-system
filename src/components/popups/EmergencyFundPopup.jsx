@@ -21,6 +21,8 @@ const EmergencyFundPopup = ({ onSave, onClose, noteText }) => {
         <button className="button-notes" onClick={handleSave}>
           ✔
         </button>
+        <button className="button-notes-close" onClick={onClose}>X</button>
+
       </div>
     </div>
   );
