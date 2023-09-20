@@ -63,8 +63,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/home/:id" element={<InvestmentTypes />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<InvestmentTypes />} />
           <Route element={<NetworthLayout />}>
             <Route path="/networth" element={<Networth />} />
             <Route path="/networth/consolidated" element={<Consolidated />} />
