@@ -3,7 +3,7 @@ const Networth = () => {
 
   return (
     <div className="networth-container">
-      <h1>Networth:</h1>
+      <h1>Net Worth:</h1>
     </div>
   );
 };
