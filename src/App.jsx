@@ -104,7 +104,7 @@ const App = () => {
                 element={<DebtAddNew addDebt={addDebt} />}
               />
               <Route path="finances/debt/addnewdebt" element={<DebtAddNew />} />
-              <Route path="finances/debt/graphics" element={<DebtGraphics debtData={debtData} />} />
+              <Route path="finances/debt/graphics" element={<DebtGraphics  />} />
             </Route>
             <Route path="finances/investments" element={<Investments />} />
             <Route element={<PersonalFinancesLayout />}>
