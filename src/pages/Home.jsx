@@ -13,7 +13,7 @@ const Home = () => {
   }, []);
 
   const investmentElements = investments.map((investment) => (
-    <Link to={`/${investment.id}`} key={investment.id}>
+    <Link to={`/home/${investment.id}`} key={investment.id}>
       <div className="investiment-types-img-container-intern-div">
         <img src={`/src/${investment.image_link}`} alt={investment.type} />
         <p>{investment.type}</p>
