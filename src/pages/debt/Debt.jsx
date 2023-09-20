@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import "../../styles/DebtAdd.css";
 
 const Debt = ({ debtData, editDebt, deleteDebt }) => {
   const [editIndex, setEditIndex] = useState(null);
@@ -6,7 +7,6 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
   const handleEditClick = (index) => {
     setEditIndex(index);
   };
-
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("en-US", {
@@ -36,30 +36,30 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
     // Call the deleteDebt function passed as a prop to delete the debt item
     deleteDebt(index);
   };
- // Calculate the total debt sum
- const totalDebt = debtData.reduce((sum, debt) => sum + parseFloat(debt.owed), 0);
-
+  // Calculate the total debt sum
+  const totalDebt = debtData.reduce(
+    (sum, debt) => sum + parseFloat(debt.owed),
+    0
+  );
 
   return (
     <>
-      <h1>My Debt listed here</h1>
-      <ul>
+      <h1>My Personal Debt</h1>
+      <ul  className="div-container-debts">
         {debtData.map((debt, index) => (
           <li key={index}>
             {editIndex === index ? (
               <>
-                {/* Render input fields for editing */}
-                <div>
-                  <label htmlFor={`description_${index}`}>
-                    Description:
-                  </label>
+               <div className="div-container-edit">
+               <div>
+                  <label htmlFor={`description_${index}`}>Description:</label>
                   <input
                     type="text"
                     id={`description_${index}`}
                     defaultValue={debt.description}
                   />
                 </div>
-                <div>
+                <div >
                   <label htmlFor={`totalAmount_${index}`}>Total Amount:</label>
                   <input
                     type="number"
@@ -92,33 +92,41 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
                   />
                 </div>
                 <button onClick={() => handleSaveClick(index)}>Save</button>
+
+               </div>
               </>
             ) : (
               <>
-              <strong>Description:</strong> {debt.description}
-              <br />
-              <strong>Total Amount:</strong> {formatCurrency(debt.totalAmount)}
-              <br />
-              <strong>Paid Amount:</strong> {formatCurrency(debt.paidAmount)}
-              <br />
-              <strong>Deadline:</strong> {debt.deadline}
-              <br />
-              <strong>Amount Still Due:</strong> {formatCurrency(debt.owed)}
-              <br />
-              <button onClick={() => handleEditClick(index)}>Edit</button>
-              <button onClick={() => handleDeleteClick(index)}>Delete</button>
-            </>
-          )}
-        </li>
-      ))}
-    </ul>
-    
-    {/* Display the total debt */}
-    <div>
-      <strong>Total Debt:</strong> {formatCurrency(totalDebt)}
-    </div>
-  </>
-);
+                <div className="div-container-show">
+                  <strong>Description:</strong> {debt.description}
+                  <br />
+                  <><strong>Total Amount:</strong></>{" "}
+                  {formatCurrency(debt.totalAmount)}
+                  <br />
+                  <strong>Paid Amount:</strong>{" "}
+                  {formatCurrency(debt.paidAmount)}
+                  <br />
+                  <strong>Deadline:</strong> {debt.deadline}
+                  <br />
+                  <strong>Amount Still Due:</strong> {formatCurrency(debt.owed)}
+                  <br />
+                  <button onClick={() => handleEditClick(index)}>Edit</button>
+                  <button onClick={() => handleDeleteClick(index)}>
+                    Delete
+                  </button>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      {/* Display the total debt */}
+      <div  className="div-container-total">
+        <strong>Total Debt:</strong> {formatCurrency(totalDebt)}
+      </div>
+    </>
+  );
 };
 
 export default Debt;

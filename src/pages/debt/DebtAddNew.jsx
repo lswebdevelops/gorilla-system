@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../styles/DebtAddNew.css";
 
 const DebtAddNew = ({ addDebt }) => {
   // Initialize form state
@@ -56,8 +57,10 @@ const DebtAddNew = ({ addDebt }) => {
   return (
     <>
       <h1>Add new debt</h1>
+    <div className="debt-add-new-container">
       <form onSubmit={handleSubmit}>
         {/* Description input */}
+      
         <div>
           <label htmlFor="description">
             Description:
@@ -67,7 +70,7 @@ const DebtAddNew = ({ addDebt }) => {
               placeholder="add description"
               value={description}
               onChange={handleDescriptionChange}
-            />
+              />
           </label>
         </div>
         
@@ -81,7 +84,7 @@ const DebtAddNew = ({ addDebt }) => {
               placeholder="add value owed"
               value={totalAmount}
               onChange={handleTotalAmountChange}
-            />
+              />
           </label>
         </div>
         
@@ -95,7 +98,7 @@ const DebtAddNew = ({ addDebt }) => {
               placeholder="quantity paid so far"
               value={paidAmount}
               onChange={handlePaidAmountChange}
-            />
+              />
           </label>
         </div>
 
@@ -108,7 +111,7 @@ const DebtAddNew = ({ addDebt }) => {
               id="deadline"
               value={deadline}
               onChange={handleDeadlineChange}
-            />
+              />
           </label>
         </div>
 
@@ -121,12 +124,14 @@ const DebtAddNew = ({ addDebt }) => {
               id="owed"
               value={owed}
               onChange={handleOwedChange}
-            />
+              />
           </label>
         </div>
         
-        <button type="submit">Save</button>
+        <button type="submit" className="save-button">Save</button>
+
       </form>
+              </div>
     </>
   );
 };

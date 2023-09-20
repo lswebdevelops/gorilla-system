@@ -1,27 +1,121 @@
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+li {
+  list-style: none;;
+}
+h1, p, h2 {
+  margin-left: 10px;
+}
+
+.div-container-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 98%; /* Adjust the width as needed */
+  max-width: 550px;
+  background-color: antiquewhite;
+  padding: 14px;
+  border-radius: 12px;
+ 
+}
+
+.div-container-edit div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.div-container-edit label {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.div-container-edit input[type="text"],
+.div-container-edit input[type="number"],
+.div-container-edit input[type="date"] {
+  flex: 4;
+  width: 80%; /* Adjust the width as needed */
+  padding: 5px; /* Adjust the padding as needed */
+  font-size: 1rem;
+
+}
+
+
+.div-container-edit button {
+  background-color: #28a745; /* Set the background color */
+  color: #fff; /* Set the text color */
+  border: none; /* Remove the border */
+  padding: 10px 20px; /* Add padding to the button */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  margin-top: 10px; /* Add margin to separate the button from the inputs */
+  border-radius: 5px; /* Add rounded corners */
+  font-weight: bold; /* Make the text bold */
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+  position: relative;
+  left: calc(50% - 20px);
+  /* Hover styles */
+  &:hover {
+    background-color: #218838; /* Change the background color on hover */
   }
+}
+
+
+.div-container-debts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.div-container-show {
+  background-color: rgb(255, 254, 252);
+  /* display: flex; */
+  flex-direction: column;
+  align-items: flex-start;
+  width:98%;
+  /* max-width: 550px; */
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1.2rem;
   
-  form {
-    max-width: 80%;
-    margin: 0 auto;
+}
+.div-container-show {
+  /* Your existing styles for the container here */
+
+  /* Add some margin or spacing between buttons */
+  margin-top: 10px;
+}
+
+.div-container-show button {
+  background-color: #007bff; /* Set the background color */
+  color: #fff; /* Set the text color */
+  border: none; /* Remove the border */
+  padding: 10px 20px; /* Add padding to the button */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  margin-right: 10px; /* Add margin between buttons */
+  border-radius: 5px; /* Add rounded corners */
+  font-weight: bold; /* Make the text bold */
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+
+  /* Hover styles */
+  &:hover {
+    background-color: #0056b3; /* Change the background color on hover */
   }
+}
+
+/* Style the second button differently if needed */
+.div-container-show button:last-child {
+  background-color: #e07f89;
+  color: #2D0B11;
   
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+  /* Hover styles for the second button */
+  &:hover {
+    background-color: #c82333; /* Change the background color on hover */
+  color: #2D0B11;
+
   }
-  
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  
+}
+
+
+.div-container-total{
+  margin-left: 10px;;
+}

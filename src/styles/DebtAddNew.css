@@ -1,0 +1,58 @@
+/* Import your other styles if needed */
+
+/* Styles for the DebtAddNew container */
+.debt-add-new-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 98%; /* Adjust the width as needed */    
+    background-color: rgb(255, 254, 252);
+    padding: 14px;
+    border-radius: 12px;
+    margin: 0 auto; /* Center the container horizontally */
+    font-weight: 700;
+
+  }
+  
+  /* Styles for the inputs and labels inside the DebtAddNew component */
+  .debt-add-new-container label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .debt-add-new-container input[type="text"],
+  .debt-add-new-container input[type="number"],
+  .debt-add-new-container input[type="date"] {
+    flex: 4;
+    width: 100%; /* Adjust the width as needed */
+    padding: 5px; /* Adjust the padding as needed */
+    font-size: 1rem;
+  }
+  
+  /* Styles for the Save button inside the DebtAddNew component */
+  .debt-add-new-container button {
+    background-color: #28a745; /* Set the background color */
+    color: #fff; /* Set the text color */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add padding to the button */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin-top: 10px; /* Add margin to separate the button from the inputs */
+    border-radius: 5px; /* Add rounded corners */
+    font-weight: bold; /* Make the text bold */
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+    /* Positioning styles if needed */
+    position: relative;
+    left: calc(50% - 100px); /* Center the button using calc */
+    /* 100px is half of the button's width */
+  
+    /* Hover styles */
+    &:hover {
+      background-color: #218838; /* Change the background color on hover */
+    }
+  }
+  
+  /* Additional styles for your form inputs and labels if needed */
+  
+  /* Add any other styles you need for the DebtAddNew component */
+  
