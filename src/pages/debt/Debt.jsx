@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "../../styles/DebtAdd.css";
 
@@ -15,6 +16,7 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
       minimumFractionDigits: 2,
     }).format(amount);
   };
+  
   const handleSaveClick = (index) => {
     // Capture the edited values from the input fields
     const editedDebt = {

@@ -1,12 +1,13 @@
 import "./index.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 import Home from "./pages/Home";
 import Networth from "./pages/networth_pages/Networth";
 import Consolidated from "./pages/networth_pages/Consolidated";
 import Diversification from "./pages/networth_pages/Diversification";
 import Holding from "./pages/networth_pages/Holding";
 import Assets from "./pages/assets_pages/Assets";
-import Finances from "./pages/financial_pages/Finances";
+import Finances from "./pages/financial_pages/personal_finances_pages/Finances";
 import Debt from "./pages/debt/Debt";
 import Investments from "./pages/financial_pages/Investments";
 import InvestmentTypes from "./pages/InvestmentTypes";
@@ -23,15 +24,13 @@ import ValueReserve from "./pages/assets_pages/ValueReserve";
 import WhereToInvest from "./pages/assets_pages/WhereToInvest";
 import NetworthLayout from "./components/layouts/NetworthLayout";
 import FinancesLayout from "./components/layouts/FinancesLayout";
-import PersonalFinances from "./pages/financial_pages/personal_finances_pages/PersonalFinances";
 import Graphics from "./pages/financial_pages/personal_finances_pages/Graphics";
 import NewData from "./pages/financial_pages/personal_finances_pages/NewData";
-import Details from "./pages/financial_pages/personal_finances_pages/Details";
+import Details from "./pages/financial_pages/personal_finances_pages/PersonalFinancesDetails";
 import PersonalFinancesLayout from "./components/layouts/PersonanFinancesLayout";
 import DebtLayout from "./components/layouts/DebtLayout";
 import DebtAddNew from "./pages/debt/DebtAddNew";
 import DebtGraphics from "./pages/debt/DebtGraphics";
-import { useState } from "react";
 
 const App = () => {
   // Initialize debt data as an empty array
@@ -59,6 +58,36 @@ const App = () => {
     // Update the state with the modified data
     setDebtData(updatedDebtData);
   };
+
+  // personal finances
+
+  // Initialize finances data as an empty array
+  const [personalFinanceData, setPersonalFinanceData] = useState([]);
+
+  // Function to add a new finances to the finances data
+  const addPersonalFinance = (newPersonalFinance) => {
+    setPersonalFinanceData([...personalFinanceData, newPersonalFinance]);
+  };
+// Function to edit a personal finance item in the personal finance data
+const editPersonalFinance = (editedFinance, index) => {
+  // Create a copy of the personal finance data array
+  const updatedFinanceData = [...personalFinanceData];
+  // Update the personal finance item at the specified index
+  updatedFinanceData[index] = editedFinance;
+  // Update the state with the modified data
+  setPersonalFinanceData(updatedFinanceData);
+};
+
+// Function to delete a personal finance item from the personal finance data
+const deletePersonalFinance = (index) => {
+  // Create a copy of the personal finance data array
+  const updatedFinanceData = [...personalFinanceData];
+  // Remove the personal finance item at the specified index
+  updatedFinanceData.splice(index, 1);
+  // Update the state with the modified data
+  setPersonalFinanceData(updatedFinanceData);
+};
+
   return (
     <BrowserRouter>
       <Routes>
@@ -90,7 +119,7 @@ const App = () => {
             <Route path="finances" element={<Finances />} />
             <Route element={<DebtLayout />}>
               <Route
-                path="finances/debt"
+                path="finances/debt/"
                 element={
                   <Debt
                     debtData={debtData}
@@ -103,22 +132,26 @@ const App = () => {
                 path="finances/debt/addnewdebt"
                 element={<DebtAddNew addDebt={addDebt} />}
               />
-              <Route path="finances/debt/addnewdebt" element={<DebtAddNew />} />
-              <Route path="finances/debt/graphics" element={<DebtGraphics debtData={debtData}    />} />
+              <Route
+                path="finances/debt/graphics"
+                element={<DebtGraphics debtData={debtData} />}
+              />
             </Route>
             <Route path="finances/investments" element={<Investments />} />
             <Route element={<PersonalFinancesLayout />}>
               <Route
-                path="finances/personalfinances"
-                element={<PersonalFinances />}
-              />
-              <Route
                 path="finances/personalfinances/details"
-                element={<Details />}
+                element={
+                  <Details 
+                  personalFinanceData={personalFinanceData}
+                  editPersonalFinance={editPersonalFinance}
+                  deletePersonalFinance={deletePersonalFinance}
+                  />
+                }
               />
               <Route
                 path="finances/personalfinances/newdata"
-                element={<NewData />}
+                element={<NewData addPersonalFinance={addPersonalFinance} />}
               />
               <Route
                 path="finances/personalfinances/graphics"

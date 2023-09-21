@@ -1,0 +1,40 @@
+/* Add this CSS to your project's stylesheet */
+
+h1 {
+    text-align: left;
+    /* Padding-left: 10px; */
+  }
+  
+  .form-finances-container {
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-finances-container label {
+    text-align: left; /* Align labels to the left */
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form-finances-container select,
+  .form-finances-container input[type="text"],
+  .form-finances-container input[type="date"],  
+  .form-finances-container input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+/* CSS for negative amount */
+.negative-amount {
+  color: red;
+}
+
+/* CSS for positive amount */
+.positive-amount {
+  color: green;
+}
