@@ -25,7 +25,7 @@ import NetworthLayout from "./components/layouts/NetworthLayout";
 import FinancesLayout from "./components/layouts/FinancesLayout";
 import PersonalFinances from "./pages/financial_pages/personal_finances_pages/PersonalFinances";
 import Graphics from "./pages/financial_pages/personal_finances_pages/Graphics";
-import PersonalFinancesConsolidated from "./pages/financial_pages/personal_finances_pages/PersonalFinancesConsolidated";
+import NewData from "./pages/financial_pages/personal_finances_pages/NewData";
 import Details from "./pages/financial_pages/personal_finances_pages/Details";
 import PersonalFinancesLayout from "./components/layouts/PersonanFinancesLayout";
 import DebtLayout from "./components/layouts/DebtLayout";
@@ -117,8 +117,8 @@ const App = () => {
                 element={<Details />}
               />
               <Route
-                path="finances/personalfinances/personalfinancesconsolidated"
-                element={<PersonalFinancesConsolidated />}
+                path="finances/personalfinances/newdata"
+                element={<NewData />}
               />
               <Route
                 path="finances/personalfinances/graphics"

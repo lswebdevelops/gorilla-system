@@ -6,6 +6,12 @@
   gap: 43px;
 }
 
+.investiment-types-img-container a {
+  border:none;
+  border-radius: 12px;
+  background-color: white;
+ 
+}
 .investiment-types-img-container-intern-div {
   text-align: center;
   font-size: 1.5rem;
@@ -16,8 +22,16 @@
 .investiment-types-img-container-intern-div img {
   width: 100%;
   border-radius: 12px;
-
+  
 }
 .investiment-types-img-container-intern-div *:hover {
-    opacity: 0.8;
+  opacity: 0.8;
+}
+
+
+.investment-types-div-img{ 
+    background-color: aliceblue;
+    padding: 15px;
+    border-radius: 14px;
+    ;
   }

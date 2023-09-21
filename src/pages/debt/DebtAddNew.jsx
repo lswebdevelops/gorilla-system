@@ -67,7 +67,7 @@ const DebtAddNew = ({ addDebt }) => {
             <input
               type="text"
               id="description"
-              placeholder="add description"
+              placeholder="** required **"
               value={description}
               onChange={handleDescriptionChange}
               />
@@ -81,7 +81,7 @@ const DebtAddNew = ({ addDebt }) => {
             <input
               type="number"
               id="totalAmount"
-              placeholder="add value owed"
+             
               value={totalAmount}
               onChange={handleTotalAmountChange}
               />
@@ -95,7 +95,7 @@ const DebtAddNew = ({ addDebt }) => {
             <input
               type="number"
               id="paidAmount"
-              placeholder="quantity paid so far"
+              
               value={paidAmount}
               onChange={handlePaidAmountChange}
               />
@@ -123,6 +123,8 @@ const DebtAddNew = ({ addDebt }) => {
               type="number"
               id="owed"
               value={owed}
+              required
+              placeholder="** required **"
               onChange={handleOwedChange}
               />
           </label>
