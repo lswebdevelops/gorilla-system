@@ -6,7 +6,7 @@ h1 {
   }
   
   .form-finances-container {
-    max-width: 400px; /* Adjust the width as needed */
+    max-width: 500px; /* Adjust the width as needed */
     margin: 0 auto;
     padding: 10px;
     display: flex;
@@ -17,6 +17,7 @@ h1 {
     text-align: left; /* Align labels to the left */
     margin-bottom: 10px;
     font-weight: bold;
+    
   }
   
   .form-finances-container select,
@@ -29,12 +30,161 @@ h1 {
     border-radius: 4px;
     margin-bottom: 10px;
   }
-/* CSS for negative amount */
+/* Income vs Expenditure */
+
+.total-amount{
+  font-size: 1.2rem;;
+  margin-bottom: 12px;
+  padding: 8px;
+
+  ;
+}
+
+/* for negative total amount  */
 .negative-amount {
   color: red;
 }
 
-/* CSS for positive amount */
+/*  for positive total amount */
 .positive-amount {
   color: green;
+}
+
+.income{
+  color: #290A10;
+  background-color: #b8f3c7;
+}
+.expenditure {
+  color: #290A10;
+  background-color: #f1cbcf;
+}
+.div-container-show-finances { 
+  /* display: flex; */
+  flex-direction: column;
+  align-items: flex-start;
+  width:100%; 
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  
+}
+ul {
+  margin : 0;
+  padding: 0;
+}
+.ul-container-income-expenditure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 95px;;
+ 
+}
+
+.div-container-show-finances{    
+  width: 350px;
+  min-width: 250px; 
+  height: 250px;;
+  border-radius: 12px;
+  border: solid rgba(244, 244, 244, 0.8) 1px;
+  margin: 14px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+}
+
+
+/* buttons */
+
+.div-container-edit button {
+  background-color: #C4C4C4;
+  color: #14050A;
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  margin-top: 10px; 
+  border-radius: 5px; 
+  font-weight: bold;
+  transition: background-color 0.3s; 
+ 
+  /* Hover styles */
+  &:hover {
+    background-color: #218838; 
+    color: white;
+  }
+}
+
+
+.div-container-show-finances button {
+  background-color: #C4C4C4;
+  color: #14050A;
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  margin-top: 10px;
+  margin-right: 10px; 
+  border-radius: 5px; 
+  font-weight: bold; 
+  transition: background-color 0.3s; 
+
+  /* Hover styles */
+  &:hover {
+    background-color: #0056b3; 
+    color:white;
+  }
+}
+
+/* Style the second button differently if needed */
+.div-container-show-finances button:last-child {
+  background-color: #C4C4C4;
+  color: #14050A;
+  
+  /* Hover styles for the second button */
+  &:hover {
+    background-color: #c82333;
+  color: #f0f0f0;
+
+  }
+}
+
+/*  while editing */
+
+
+.container-edit-personal-finances{ 
+ /* display: flex; */
+ flex-direction: column;
+ align-items: flex-start;
+ width:100%; 
+ padding: 14px;
+ border-radius: 12px;
+ font-size: 1.2rem;
+ background-color: #E0E0E0;
+
+}
+
+.container-edit-personal-finances button{ 
+  background-color: #C4C4C4;
+  color: #14050A;
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  margin-top: 10px;
+  margin-right: 10px; 
+  border-radius: 5px; 
+  font-weight: bold; 
+  transition: background-color 0.3s; 
+
+  /* Hover styles */
+  &:hover {
+    background-color: #4f9945; 
+    color:white;
+  }
+ }
+ 
+.container-edit-personal-finances select,
+.container-edit-personal-finances input[type="text"],
+.container-edit-personal-finances input[type="date"],  
+.container-edit-personal-finances input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }

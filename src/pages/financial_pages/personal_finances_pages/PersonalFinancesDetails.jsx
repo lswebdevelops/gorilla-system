@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import "../../../styles/PersonalFinancesPages.css";
 
 const Details = ({
@@ -52,16 +53,29 @@ const Details = ({
   );
 
   return (
-    <>
-      <h1>Personal Finances Details</h1>
-      <ul>
+    <div>
+    <h1>Income vs Expenditure</h1>
+      {/* display the personal finance total amount */}
+      <div className="total-amount">
+        <strong>Total amount:</strong>
+        <span
+          className={
+            totalPersonalFinance < 0 ? "negative-amount" : "positive-amount"
+          }
+        >
+          {formatCurrency(totalPersonalFinance)}
+        </span>
+      </div>
+
+<div className="div-container-income-expenditure">
+      <ul className="ul-container-income-expenditure">
         {personalFinanceData.map((personalFinance, index) => (
           <li key={index}>
             {editIndex === index ? (
-              <>
-                <div>
+              <div className="container-edit-personal-finances">
+                <div >
                   {/* type */}
-                  <div className="div-container-edit">
+                  <div className="div-container-edit-personal-finances">
                     <label htmlFor={`type_${index}`}>Type</label>
                     <select
                       id={`type_${index}`}
@@ -72,7 +86,8 @@ const Details = ({
                     </select>
                   </div>
                   {/* category */}
-                  <div>
+                  <div className="div-container-edit-personal-finances">
+
                     <label htmlFor={`category_${index}`}>category:</label>
                     <input
                       type="text"
@@ -81,7 +96,8 @@ const Details = ({
                     />
                   </div>
                   {/* date */}
-                  <div>
+                  <div className="div-container-edit-personal-finances">
+
                     <label htmlFor={`date_${index}`}>Date:</label>
                     <input
                       type="date"
@@ -90,7 +106,8 @@ const Details = ({
                     />
                   </div>
                   {/* description */}
-                  <div>
+                  <div className="div-container-edit-personal-finances">
+
                     <label htmlFor={`description_${index}`}>Description:</label>
                     <input
                       type="text"
@@ -99,7 +116,8 @@ const Details = ({
                     />
                   </div>
                   {/* amount */}
-                  <div>
+                  <div className="div-container-edit-personal-finances">
+
                     <label htmlFor={`amount_${index}`}>Amount:</label>
                     <input
                       type="number"
@@ -110,10 +128,10 @@ const Details = ({
 
                   <button onClick={() => handleSaveClick(index)}>Save</button>
                 </div>
-              </>
+              </div>
             ) : (
               <>
-                <div className="div-container-show">
+                <div className={personalFinance.type === "Expenditure" ? "expenditure div-container-show-finances" : "income div-container-show-finances"} >
                   <strong>Type:</strong> {personalFinance.type}
                   <br />
                   <>
@@ -138,18 +156,10 @@ const Details = ({
           </li>
         ))}
       </ul>
-      {/* display the personal finance total amount */}
-      <div>
-        <strong>Total amount:</strong>
-        <span
-          className={
-            totalPersonalFinance < 0 ? "negative-amount" : "positive-amount"
-          }
-        >
-          {formatCurrency(totalPersonalFinance)}
-        </span>
-      </div>
-    </>
+
+     </div>
+    
+    </div>
   );
 };
 
