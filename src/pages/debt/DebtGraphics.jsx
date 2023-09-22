@@ -1,6 +1,4 @@
-import Debt from "./Debt";
 import { Chart } from "react-google-charts"; // Import the Chart component from react-google-charts
-
 
 const DebtGraphics = ({ debtData }) => {
     // Check if there is data to display
@@ -26,18 +24,20 @@ const DebtGraphics = ({ debtData }) => {
       chartArea: { width: "80%", height: "70%" },
       hAxis: { title: "Debt ($)", titleTextStyle: { color: "#333" } }, // Change the x-axis label
       vAxis: { minValue: 0 },
+      series: {
+        0: { color: "#f1cbcf" }, // Set a default color for the bars
+      },
     };
   
     return (
       <>
-        <h1>Graphics</h1>
-     
+           
         {/* Render the bar chart */}
         <Chart
           width={"100%"}
           height={"400px"}
           chartType="BarChart"
-          data={[["Debt Description", "Owed Amount"], ...chartData]} // Update the label for x-axis
+          data={[["Debt Description", "Owed"], ...chartData]} // Update the label for x-axis
           options={options}
         />
       </>

@@ -158,7 +158,9 @@ const deletePersonalFinance = (index) => {
               />
               <Route
                 path="finances/personalfinances/graphics"
-                element={<Graphics />}
+                element={<Graphics 
+                  personalFinanceData={personalFinanceData}
+                  />}
               />
               <Route
                 path="finances/personalfinances/tablepersonalfinances"
