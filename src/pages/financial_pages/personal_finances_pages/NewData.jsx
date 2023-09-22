@@ -61,6 +61,7 @@ const NewData = ({ addPersonalFinance }) => {
   return (
     <>
       <h1>Consolidated Personal Finances </h1>
+      <p >Here you can add your income and expenses</p>
       <div className="form-finances-container">
         <form onSubmit={handleSubmit}>
           {/* type  */}

@@ -57,7 +57,7 @@ const Details = ({
     <h1>Income vs Expenditure</h1>
       {/* display the personal finance total amount */}
       <div className="total-amount">
-        <strong>Total amount:</strong>
+        <strong>Balance:</strong>
         <span
           className={
             totalPersonalFinance < 0 ? "negative-amount" : "positive-amount"
@@ -145,11 +145,13 @@ const Details = ({
                   <br />
                   <strong>Amount:</strong>{" "}
                   {formatCurrency(personalFinance.amount)}
-                  <br />
+                  <hr />
+                  <div className="buttons-edit-save">
                   <button onClick={() => handleEditClick(index)}>Edit</button>
                   <button onClick={() => handleDeleteClick(index)}>
                     Delete
                   </button>
+                  </div>
                 </div>
               </>
             )}

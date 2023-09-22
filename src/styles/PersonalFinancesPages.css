@@ -188,3 +188,21 @@ ul {
   border-radius: 4px;
   margin-bottom: 10px;
 }
+hr {
+margin: 10px;
+width: 300px;
+position: relative;
+left: -12px;
+}
+.buttons-edit-save {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
+.buttons-edit-save button {
+ width: 25%;;
+}
+
+p {
+  font-size: 1.2rem;;
+}
