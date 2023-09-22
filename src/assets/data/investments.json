@@ -4,25 +4,25 @@
       "id": 1,
       "type": "Stocks",
       "description": "Stocks represent ownership in a company. They can provide potential for capital appreciation and dividends. They are considered a higher-risk investment.",
-      "image_link": "./assets/images/stocks-image.jpg"
+      "image_link": "https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/images/stocks-image.jpg"
     },
     {
       "id": 2,
       "type": "REITs",
       "description": "REITs are investments in real estate properties, such as commercial buildings and apartment complexes. They offer potential rental income and may provide diversification in a portfolio.",
-      "image_link": "./assets/images/reits-image.jpg"
+      "image_link": "https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/images/reits-image.jpg"
     },
     {
       "id": 3,
       "type": "Bonds",
       "description": "Bonds are debt securities issued by governments or corporations. They pay periodic interest and return the principal amount at maturity. Bonds are generally considered lower-risk than stocks.",
-      "image_link": "./assets/images/bonds-image.jpg"
+      "image_link": "https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/images/bonds-image.jpg"
     },
     {
       "id": 4,
       "type": "Emergency Fund",
       "description": "An emergency fund is a savings account designed to cover unexpected expenses or financial emergencies, such as medical bills or car repairs. It provides financial security and peace of mind.",
-      "image_link": "./assets/images/emergency-fund-image.jpg"
+      "image_link": "https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/images/emergency-fund-image.jpg"
     }
   ]
 }

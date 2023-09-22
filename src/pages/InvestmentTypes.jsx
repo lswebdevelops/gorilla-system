@@ -23,7 +23,7 @@ const InvestmentTypes = () => {
           <h2>{investmentType.type}</h2>
           <div className="investment-types-div-img">
             <img
-              src={`/src/${investmentType.image_link}`}
+              src={`${investmentType.image_link}`}
               alt={investmentType.type}
             />
             <p>{investmentType.description}</p>

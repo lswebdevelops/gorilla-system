@@ -107,7 +107,7 @@ ul {
  
   /* Hover styles */
   &:hover {
-    background-color: #218838; 
+    background-color: #b8f3c7;
     color: white;
   }
 }
@@ -131,6 +131,28 @@ ul {
     color:white;
   }
 }
+/* save button  */ 
+
+
+.save-button {
+  background-color: #b8f3c7;
+  color: #14050A;
+  border: solid grey 1px; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  margin-top: 10px;
+  margin-right: 10px; 
+  border-radius: 5px; 
+  font-weight: bold; 
+  transition: background-color 0.3s; 
+
+  /* Hover styles */
+  &:hover {
+    background-color: #99e4ac;
+    color:black;
+  }
+}
+
 
 /* Style the second button differently if needed */
 .div-container-show-finances button:last-child {

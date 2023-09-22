@@ -32,23 +32,21 @@
   
   /* Styles for the Save button inside the DebtAddNew component */
   .debt-add-new-container button {
-    background-color: #28a745; /* Set the background color */
-    color: #fff; /* Set the text color */
-    border: none; /* Remove the border */
-    padding: 10px 20px; /* Add padding to the button */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    margin-top: 10px; /* Add margin to separate the button from the inputs */
-    border-radius: 5px; /* Add rounded corners */
-    font-weight: bold; /* Make the text bold */
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-    /* Positioning styles if needed */
-    position: relative;
-    left: calc(50% - 100px); /* Center the button using calc */
-    /* 100px is half of the button's width */
+    background-color: #b8f3c7;
+    color: #14050A;
+    border: solid grey 1px; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    margin-top: 10px;
+    margin-right: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    transition: background-color 0.3s; 
   
     /* Hover styles */
     &:hover {
-      background-color: #218838; /* Change the background color on hover */
+      background-color: #99e4ac;
+      color:black;
     }
   }
   

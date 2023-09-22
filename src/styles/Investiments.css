@@ -1,3 +1,66 @@
-.investiments-container {
-    background-color: rgb(208, 218, 218);
+.button-add-to-portfolio {
+  background-color: #c4c4c4;
+  color: #14050a;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+
+  transition: background-color 0.3s;
+  font-size: 1.3rem;
+  /* Hover styles */
+  &:hover {
+    background-color: #4f9945;
+    color: white;
+  }
 }
+.input-quantity-investments {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 120px;
+  border: solid #c4c4c4 1px;
+  border-radius: 6px;
+}
+.form-investiments{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 10px;
+}
+.form-investiments label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.form-investiments input {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    width: 100px;;
+    border: solid #c4c4c4 1px;
+    text-align: center;
+}
+
+.button-add-investiment {
+    background-color: #c4c4c4;
+    color: #14050a;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+  
+    transition: background-color 0.3s;
+    font-size: 1.3rem;
+    /* Hover styles */
+    &:hover {
+      background-color: #4f9945;
+      color: white;
+    }
+  }

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "../../styles/DebtAdd.css";
 
@@ -49,7 +48,7 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
       <h1>My Personal Debt</h1>
       <ul  className="div-container-debts">
         {debtData.map((debt, index) => (
-          <li key={index}>
+          <li key={index} >
             {editIndex === index ? (
               <>
                <div className="div-container-edit">
@@ -99,7 +98,9 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
               </>
             ) : (
               <>
-                <div className="div-container-show">
+                <div                   
+                  className={debt.owed === "0" ? 'zero-owed div-container-show' : 'test div-container-show'}
+                  >
                   <strong>Description:</strong> {debt.description}
                   <br />
                   <><strong>Total Amount:</strong></>{" "}

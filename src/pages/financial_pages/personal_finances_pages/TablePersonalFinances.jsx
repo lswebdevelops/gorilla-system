@@ -21,7 +21,7 @@ const TablePersonalFinances = ({ personalFinanceData }) => {
 
     return (
       <div>
-        <h1>Personal Finances Spread Sheet</h1>
+        <h1>Personal Finances Spreadsheet</h1>
         <table className="personal-finances-table">
           <thead>
             <tr>

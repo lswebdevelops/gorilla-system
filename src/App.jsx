@@ -31,6 +31,7 @@ import PersonalFinancesLayout from "./components/layouts/PersonanFinancesLayout"
 import DebtLayout from "./components/layouts/DebtLayout";
 import DebtAddNew from "./pages/debt/DebtAddNew";
 import DebtGraphics from "./pages/debt/DebtGraphics";
+import DebtTable from "./pages/debt/DebtTable";
 import TablePersonalFinances from './pages/financial_pages/personal_finances_pages/TablePersonalFinances'
 
 const App = () => {
@@ -138,6 +139,10 @@ const deletePersonalFinance = (index) => {
               <Route
                 path="finances/debt/graphics"
                 element={<DebtGraphics debtData={debtData} />}
+              />
+              <Route
+                path="finances/debt/debttable"
+                element={<DebtTable debtData={debtData} />}
               />
             </Route>
             <Route path="finances/investments" element={<Investments />} />
