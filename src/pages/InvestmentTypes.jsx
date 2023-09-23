@@ -6,15 +6,26 @@ const InvestmentTypes = () => {
   const [investmentType, setInvestmentType] = useState(null);
 
   useEffect(() => {
-    fetch(`/src/assets/data/investments.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        const investment = data.investments.find(
-          (item) => item.id === parseInt(params.id)
-        );
-        setInvestmentType(investment);
-      });
-  }, [params.id]);
+  fetch("/src/pages/investments.js")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      const investment = data.investments.find(
+        (item) => item.id === parseInt(params.id)
+      );
+      setInvestmentType(investment);
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
+      // Handle the error gracefully, e.g., display a message to the user
+    });
+}, [params.id]);
+
+  
   return (
     <div>
       <h1>Investment Types</h1>
