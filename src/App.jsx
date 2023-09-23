@@ -10,7 +10,10 @@ import Assets from "./pages/assets_pages/Assets";
 import Finances from "./pages/financial_pages/personal_finances_pages/Finances";
 import Debt from "./pages/debt/Debt";
 import Investments from "./pages/financial_pages/Investments";
-import InvestmentTypes from "./pages/InvestmentTypes";
+import InvestmentTypesStocks from "./pages/InvestmentTypesStocks";
+import InvestmentTypesBonds from "./pages/InvestmentTypesBonds";
+import InvestmentTypesREITs from "./pages/InvestmentTypesREITs";
+import InvestmentTypesEmergencyFund from "./pages/InvestmentTypesEmergencyFund";
 import Layout from "./components/layouts/Layout";
 import AssetsLayout from "./components/layouts/AssetsLayout";
 import Bonds from "./pages/assets_pages/Bonds";
@@ -97,7 +100,10 @@ const deletePersonalFinance = (index) => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<InvestmentTypes />} />
+          <Route path="/1" element={<InvestmentTypesStocks />} />
+          <Route path="/3" element={<InvestmentTypesBonds />} />
+          <Route path="/2" element={<InvestmentTypesREITs />} />
+          <Route path="/4" element={<InvestmentTypesEmergencyFund />} />
           <Route element={<NetworthLayout />}>
             <Route path="/networth" element={<Networth />} />
             <Route path="/networth/consolidated" element={<Consolidated />} />
