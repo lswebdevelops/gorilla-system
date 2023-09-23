@@ -6,7 +6,7 @@ const InvestmentTypes = () => {
   const [investmentType, setInvestmentType] = useState(null);
 
   useEffect(() => {
-  fetch("/src/pages/investments.js")
+  fetch("src/pages/investments.json")
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
