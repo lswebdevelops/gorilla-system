@@ -9,7 +9,6 @@ import Holding from "./pages/networth_pages/Holding";
 import Assets from "./pages/assets_pages/Assets";
 import Finances from "./pages/financial_pages/personal_finances_pages/Finances";
 import Debt from "./pages/debt/Debt";
-import Investments from "./pages/financial_pages/Investments";
 import InvestmentTypesStocks from "./pages/InvestmentTypesStocks";
 import InvestmentTypesBonds from "./pages/InvestmentTypesBonds";
 import InvestmentTypesREITs from "./pages/InvestmentTypesREITs";
@@ -36,8 +35,17 @@ import DebtAddNew from "./pages/debt/DebtAddNew";
 import DebtGraphics from "./pages/debt/DebtGraphics";
 import DebtTable from "./pages/debt/DebtTable";
 import TablePersonalFinances from './pages/financial_pages/personal_finances_pages/TablePersonalFinances'
+import InvestmentsLayout from "./components/layouts/InvestmentsLayout";
+import Portfolio from "./pages/financial_pages/Portfolio";
+import Purchases from "./pages/financial_pages/Purchases";
 
 const App = () => {
+  
+  const [portfolioItems, setPortfolioItems] = useState([]);
+
+  const addToPortfolio = (item) => {
+    setPortfolioItems([...portfolioItems, item]);
+  };
 
  
   // Initialize debt data as an empty array
@@ -151,7 +159,10 @@ const deletePersonalFinance = (index) => {
                 element={<DebtTable debtData={debtData} />}
               />
             </Route>
-            <Route path="finances/investments" element={<Investments />} />
+            <Route path="finances/investments" element={<InvestmentsLayout />}>
+              <Route path="finances/investments/purchases" element={<Purchases addToPortfolio={addToPortfolio}/>} />
+              <Route path="finances/investments/portfolio" element={<Portfolio portfolioItems={portfolioItems} />} />
+            </Route>
             <Route element={<PersonalFinancesLayout />}>
               <Route
                 path="finances/personalfinances/details"
