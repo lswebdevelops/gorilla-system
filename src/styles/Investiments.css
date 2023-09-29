@@ -53,8 +53,33 @@
     width: 60px;
     height: 30px;
     text-align: center;
-    font-weight: bold;
-  
+    font-weight: bold;  
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    /* Hover styles */
+    &:hover {
+      background-color: #4f9945;
+      color: white;
+    }
+  }
+  .total-portfolio-span{
+    font-size: 1.1rem;
+    ;
+  }
+  .total-portfolio-h2 {
+    font-size: 1.1rem;
+
+  }
+
+  #link-portfolio {
+    background-color: #c4c4c4;
+    color: #14050a;
+    border: none;
+    cursor: pointer;   
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+      font-weight: bold;  
     transition: background-color 0.3s;
     font-size: 1.1rem;
     /* Hover styles */

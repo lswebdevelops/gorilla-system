@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../../styles/Investiments.css";
+import { Link } from "react-router-dom";
 
 const Purchases = ( {addToPortfolio} ) => {
   const apiKey = "21f8243f104a435c88432ff1ab7a7650";
@@ -25,42 +26,57 @@ const Purchases = ( {addToPortfolio} ) => {
         `${endpoint}?symbol=${symbol}&apikey=${apiKey}`
       );
       const data = await response.json();
-
-      return data;
+  
+      if (data && data.price !== "No Data") {
+        return data;
+      } else {
+        alert("Company not found");
+        return null;
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
+      alert("Error fetching data");
       return null;
     }
   }
+  
 
   // Function to handle adding a new stock to the table
   const handleSeach = async () => {
-    const tickerInput = document.getElementById("tickerInput");
-    const newSymbol = tickerInput.value.toUpperCase(); // Ensure uppercase symbol
+  const tickerInput = document.getElementById("tickerInput");
+  const newSymbol = tickerInput.value.toUpperCase(); // Ensure uppercase symbol
 
-    if (newSymbol) {
-      const data = await fetchStockData(newSymbol);
-      if (data) {
+  if (newSymbol) {
+    const data = await fetchStockData(newSymbol);
+    if (data) {
+      if (data.price !== "No Data") {
         const priceResponse = await fetch(
           `https://api.twelvedata.com/price?symbol=${newSymbol}&apikey=${apiKey}`
         );
         const priceData = await priceResponse.json();
 
-        const newStock = {
-          symbol: newSymbol,
-          name: data.name || "No Data",
-          price: priceData.price || "No Data",
-          currency: data.currency || "No Data",
-          exchange: data.exchange || "No Data",
-          quantity: 1, // Initialize quantity to 1
-          subTotal: priceData.price || "No Data", // Initialize subTotal to the price
-        };
+        if (priceData.price) {
+          const newStock = {
+            symbol: newSymbol,
+            name: data.name ,
+            price: priceData.price ,
+            currency: data.currency ,
+            exchange: data.exchange ,
+            quantity: 1, // Initialize quantity to 1
+            subTotal: priceData.price, // Initialize subTotal to the price
+          };
 
-        setStockDataList([...stockDataList, newStock]);
-        tickerInput.value = ""; // Clear the input field
+          setStockDataList([...stockDataList, newStock]);
+          tickerInput.value = ""; // Clear the input field
+        } else {
+          alert("Company not found");
+        }
+      } else {
+        alert("Company not found");
       }
     }
-  };
+  }
+};
 
 
   return (
@@ -124,6 +140,7 @@ const Purchases = ( {addToPortfolio} ) => {
               </td>
               <td>{stockData.subTotal}</td>
               <td>
+                <Link id="link-portfolio" to={"/finances/investments/finances/investments/portfolio"}>
                 <button
                   className="button-add-to-portfolio"  
                   onClick={()=> {
@@ -131,6 +148,7 @@ const Purchases = ( {addToPortfolio} ) => {
                 >
                   +
                 </button>
+                </Link>
               </td>
             </tr>
           ))}

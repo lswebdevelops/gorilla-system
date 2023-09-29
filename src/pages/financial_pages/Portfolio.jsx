@@ -1,10 +1,10 @@
 
 // import '../../styles/Investments.css';
 
-const Portfolio = ({ portfolioItems }) => {
+const Portfolio = ({ portfolioItems, totalPortfolio }) => {
   return (
     <div>
-      <h1>Portfolio</h1>
+      <h1>My Purchases</h1>
       <table>
         <thead>
           <tr>
@@ -25,6 +25,7 @@ const Portfolio = ({ portfolioItems }) => {
           ))}
         </tbody>
       </table>
+      <h2 className="total-portfolio-h2">Total: <span className="total-portfolio-span">$ {totalPortfolio}</span></h2>
     </div>
   );
 };

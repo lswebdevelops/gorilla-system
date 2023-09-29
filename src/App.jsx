@@ -2,17 +2,16 @@ import "./index.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home";
-import Networth from "./pages/networth_pages/Networth";
 import Consolidated from "./pages/networth_pages/Consolidated";
 import Diversification from "./pages/networth_pages/Diversification";
 import Holding from "./pages/networth_pages/Holding";
 import Assets from "./pages/assets_pages/Assets";
 import Finances from "./pages/financial_pages/personal_finances_pages/Finances";
 import Debt from "./pages/debt/Debt";
-import InvestmentTypesStocks from "./pages/investments_pages/InvestmentTypesStocks";
-import InvestmentTypesBonds from "./pages/investments_pages/InvestmentTypesBonds";
-import InvestmentTypesREITs from "./pages/investments_pages/InvestmentTypesREITs";
-import InvestmentTypesEmergencyFund from "./pages/investments_pages/InvestmentTypesEmergencyFund";
+import InvestmentTypesStocks from "./pages/investment_types_pages/InvestmentTypesStocks";
+import InvestmentTypesBonds from "./pages/investment_types_pages/InvestmentTypesBonds";
+import InvestmentTypesREITs from "./pages/investment_types_pages/InvestmentTypesREITs";
+import InvestmentTypesEmergencyFund from "./pages/investment_types_pages/InvestmentTypesEmergencyFund";
 import Layout from "./components/layouts/Layout";
 import AssetsLayout from "./components/layouts/AssetsLayout";
 import Bonds from "./pages/assets_pages/Bonds";
@@ -36,12 +35,12 @@ import DebtGraphics from "./pages/debt/DebtGraphics";
 import DebtTable from "./pages/debt/DebtTable";
 import TablePersonalFinances from './pages/financial_pages/personal_finances_pages/TablePersonalFinances'
 import InvestmentsLayout from "./components/layouts/InvestmentsLayout";
-import Investments from "./pages/financial_pages/Investments";
 import Portfolio from "./pages/financial_pages/Portfolio";
 import Purchases from "./pages/financial_pages/Purchases";
 import Gorillasgram from './pages/gorillasgram_pages/gorillasgram'
 import GorillasgramLayout from "./components/layouts/Gorrilasgram_layout";
 import CreateMemes from "./pages/gorillasgram_pages/CreateMemes";
+import CompoundInterest from "./pages/financial_pages/CompoundInterest";
 
 
 
@@ -53,6 +52,19 @@ const App = () => {
     setPortfolioItems([...portfolioItems, item]);
   };
 
+ 
+// Function to calculate the total portfolio value 
+const calculateTotalPortfolio = () => {
+  let total = 0;
+  
+  // iterate over portfolio and sum up  subtotal values 
+  portfolioItems.forEach((item) => {
+    total += parseFloat(item.subTotal);
+  });
+  
+  return total.toFixed(2);
+  
+}
  
   // Initialize debt data as an empty array
   const [debtData, setDebtData] = useState([]);
@@ -118,11 +130,10 @@ const deletePersonalFinance = (index) => {
           <Route path="/3" element={<InvestmentTypesBonds />} />
           <Route path="/2" element={<InvestmentTypesREITs />} />
           <Route path="/4" element={<InvestmentTypesEmergencyFund />} />
-          <Route element={<NetworthLayout />}>
-            <Route path="/networth" element={<Networth />} />
-            <Route path="/networth/consolidated" element={<Consolidated />} />
-            <Route path="/networth/diversification" element={<Diversification />} />
-            <Route path="/networth/holding" element={<Holding />} />
+          <Route path="networth" element={<NetworthLayout />}>           
+            <Route path="networth/" element={<Consolidated />} />
+            <Route path="networth/diversification" element={<Diversification />} />
+            <Route path="networth/holding" element={<Holding />} />
           </Route>
           <Route path="assets" element={<AssetsLayout />}>
             <Route index element={<Assets />} />
@@ -162,10 +173,15 @@ const deletePersonalFinance = (index) => {
                 element={<DebtTable debtData={debtData} />}
               />
             </Route>
-            <Route element={<InvestmentsLayout />}>              
-              <Route path="finances/investments/" element={<Investments />} />
+            <Route path="finances/investments" element={<InvestmentsLayout />}>            
+            
               <Route path="finances/investments/purchases" element={<Purchases addToPortfolio={addToPortfolio}/>} />
-              <Route path="finances/investments/portfolio" element={<Portfolio portfolioItems={portfolioItems} />} />
+              <Route path="finances/investments/portfolio" 
+                element={<Portfolio 
+                  portfolioItems={portfolioItems}
+                  totalPortfolio={calculateTotalPortfolio()}
+                   />} />
+              <Route path="finances/investments/compoundinterest" element={<CompoundInterest />} />
             </Route>
             <Route element={<PersonalFinancesLayout />}>
               <Route
