@@ -16,7 +16,6 @@ const Home = () => {
           </div>
         </Link>
 
-        
         <Link to={`/2`} key="2">
           <div className="investiment-types-img-container-intern-div">
             <img
@@ -44,12 +43,6 @@ const Home = () => {
             <p>Emergency Fund</p>
           </div>
         </Link>
-
-       
-
-      
-
-
       </div>
     </div>
   );

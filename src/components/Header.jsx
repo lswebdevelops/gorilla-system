@@ -9,6 +9,7 @@ const Header = () => {
           <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/networth"}>Net Worth</NavLink>
           <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/assets"}>Assets</NavLink>
           <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/finances"}>Finances</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"/gorillasgram"}>Gorillasgram</NavLink>
         </nav>
       </header>
 
