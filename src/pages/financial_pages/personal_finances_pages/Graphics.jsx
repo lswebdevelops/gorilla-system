@@ -1,6 +1,7 @@
 import { Chart } from "react-google-charts";
 
-const Graphics = ({ personalFinanceData }) => {
+const Graphics = ( {personalFinanceData} ) => {
+
   // Check if there is any data to display
   if (personalFinanceData.length === 0) {
     return (

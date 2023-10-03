@@ -1,0 +1,79 @@
+ 
+  .container-compound-interest {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+   .h1-compound-interest {
+    text-align: center;
+    color: #333;
+  }
+  
+  .label-compound-interest {
+ 
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .input-compound-interest[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .container-button-compound-interest {
+    display: flex;
+    justify-content: center;
+  }
+  .button-compound-interest {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;;
+
+  }
+  
+  .button-compound-interest:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-container {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 15px;;
+
+  }
+  
+  .result-container p {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the results section */
+  .result-container p {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+  }
+  
+  .result-container p {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+ 
