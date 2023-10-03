@@ -37,7 +37,7 @@ import TablePersonalFinances from "./pages/financial_pages/personal_finances_pag
 import InvestmentsLayout from "./components/layouts/InvestmentsLayout";
 import Portfolio from "./pages/financial_pages/Portfolio";
 import Purchases from "./pages/financial_pages/Purchases";
-import Gorillasgram from "./pages/gorillasgram_pages/gorillasgram";
+import Gorillasgram from "./pages/gorillasgram_pages/Gorillasgram";
 import GorillasgramLayout from "./components/layouts/Gorrilasgram_layout";
 import CreateMemes from "./pages/gorillasgram_pages/CreateMemes";
 import CompoundInterest from "./pages/financial_pages/CompoundInterest";
