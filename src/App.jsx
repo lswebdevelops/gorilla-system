@@ -115,7 +115,7 @@ const App = () => {
     // Update the state with the modified data
     setPersonalFinanceData(updatedFinanceData);
   };
- 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -188,7 +188,7 @@ const App = () => {
               <Route
                 path="finances/investments/compoundinterest"
                 element={<CompoundInterest />}
-              />            
+              />
             </Route>
             <Route element={<PersonalFinancesLayout />}>
               <Route
