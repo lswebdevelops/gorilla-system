@@ -1,0 +1,66 @@
+.gorrila-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 28px;
+    
+}
+
+
+/* Style for the container div */
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  /* Style for the custom button label */
+  .custom-file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-bottom: 10px;;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style for the input (hidden) */
+  #file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Change button color on hover */
+  .custom-file-input-label:hover {
+    background-color: #0056b3;
+  }
+  .upload-image-container {
+    display: flex;
+    flex-direction: column;   
+    gap: 14px;;
+   
+   
+  }
+  .upload-image-container img {    
+    max-width: 450px;
+    ;
+  }
+  .delete-button {
+    background-color: #b7b7b7;
+    border-radius: 4px;
+    border: none;
+    width: 25px;
+    height: 25px;
+    font-size: 1.2rem;
+    position: relative;
+    top: 42px;
+    left:8px;
+    color: white;
+    ;
+  }

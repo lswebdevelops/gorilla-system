@@ -12,8 +12,7 @@ const CreateMemes = () => {
   });
   const [allMemes, setAllMemes] = useState(memesData.data.memes);
  
-  function getMemeImage() {
- 
+  function getMemeImage() { 
     const randomNumber = Math.floor(Math.random() * allMemes.length);
     const url = allMemes[randomNumber].url;
     setMeme((prevMeme) => ({
@@ -47,20 +46,21 @@ const CreateMemes = () => {
       </div>
       <button onClick={getMemeImage} className="btn-meme">
         Get a new meme image       
-      </button>
-      <div className="image_meme_container">
-      <h1 className="image_meme_first_phrase" >{meme.topText}</h1>
-      <h1 className="image_meme_second_phrase">{meme.bottomText}</h1>
+      </button>      
+      <div className="meme">
       <img
         src={meme.randomImage}
        
-        className="img-content"
+        className="meme--image"
         alt=" just a meme"
       />
+      <h1 className="meme--text top" >{meme.topText}</h1>
+      <h1 className="meme--text bottom">{meme.bottomText}</h1>
       
       </div>
+      </div>
      
-    </div>
+  
   );
 }
 
