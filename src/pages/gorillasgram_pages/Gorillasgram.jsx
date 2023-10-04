@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import '../../styles/Gorrila-images-container.css';
 
 const Gorillasgram = () => {
+
+
   const [uploadedImages, setUploadedImages] = useState([]);
 
   // Load the uploaded image URLs from local storage when the component mounts

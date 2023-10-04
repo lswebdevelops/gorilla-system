@@ -1,7 +1,7 @@
 .gorrila-images-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
     gap: 28px;
     
 }
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;   
     gap: 14px;;
-   
+   justify-content: center;
    
   }
   .upload-image-container img {    
@@ -59,8 +59,11 @@
     height: 25px;
     font-size: 1.2rem;
     position: relative;
-    top: 42px;
-    left:8px;
+    top: 46px;
+    left: 4px;
     color: white;
     ;
   }
+
+
+  
