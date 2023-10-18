@@ -3,10 +3,7 @@ import "../../styles/DebtAdd.css";
 
 const Debt = ({ debtData, editDebt, deleteDebt }) => {
   const [editIndex, setEditIndex] = useState(null);
-
-  const handleEditClick = (index) => {
-    setEditIndex(index);
-  };
+ 
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("en-US", {

@@ -1,7 +1,7 @@
-
-// import '../../styles/Investments.css';
+import  { useEffect, useState, useRef } from "react";
 
 const Portfolio = ({ portfolioItems, totalPortfolio }) => {
+  
   return (
     <div>
       <h1>My Purchases</h1>
@@ -25,7 +25,9 @@ const Portfolio = ({ portfolioItems, totalPortfolio }) => {
           ))}
         </tbody>
       </table>
-      <h2 className="total-portfolio-h2">Total: <span className="total-portfolio-span">$ {totalPortfolio}</span></h2>
+      <h2 className="total-portfolio-h2">
+        Total: <span className="total-portfolio-span">$ {totalPortfolio}</span>
+      </h2>
     </div>
   );
 };

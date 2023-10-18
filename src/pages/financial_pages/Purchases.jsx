@@ -19,6 +19,21 @@ const Purchases = ( {addToPortfolio} ) => {
     }
   }, [newStockData, stockDataList]);
 
+
+
+  // // Load data from localStorage
+  // useEffect(() => {
+  //   const storedStockDataList =
+  //     JSON.parse(localStorage.getItem("stockDataList")) || [];
+  //   setStockDataList(storedStockDataList);
+  // }, []);
+
+  // useEffect(() => {
+  //   // Save data to localStorage whenever stockDataList changes
+  //   localStorage.setItem("stockDataList", JSON.stringify(stockDataList));
+  // }, [stockDataList]);
+
+  
   // Function to fetch stock data by symbol
   async function fetchStockData(symbol) {
     try {
@@ -140,7 +155,7 @@ const Purchases = ( {addToPortfolio} ) => {
               </td>
               <td>{stockData.subTotal}</td>
               <td>
-                <Link id="link-portfolio" to={"/finances/investments/finances/investments/portfolio"}>
+                <Link id="link-portfolio" to={`/finances/finances/investments/investments/portfolio`}>
                 <button
                   className="button-add-to-portfolio"  
                   onClick={()=> {

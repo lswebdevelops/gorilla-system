@@ -5,8 +5,6 @@ import Home from "./pages/Home";
 import Consolidated from "./pages/networth_pages/Consolidated";
 import Diversification from "./pages/networth_pages/Diversification";
 import Holding from "./pages/networth_pages/Holding";
-import Assets from "./pages/assets_pages/Assets";
-import Finances from "./pages/financial_pages/personal_finances_pages/Finances";
 import Debt from "./pages/debt/Debt";
 import InvestmentTypesStocks from "./pages/investment_types_pages/InvestmentTypesStocks";
 import InvestmentTypesBonds from "./pages/investment_types_pages/InvestmentTypesBonds";
@@ -27,7 +25,7 @@ import NetworthLayout from "./components/layouts/NetworthLayout";
 import FinancesLayout from "./components/layouts/FinancesLayout";
 import Graphics from "./pages/financial_pages/personal_finances_pages/Graphics";
 import NewData from "./pages/financial_pages/personal_finances_pages/NewData";
-import Details from "./pages/financial_pages/personal_finances_pages/PersonalFinancesDetails";
+import IncomevsExpenditure from "./pages/financial_pages/personal_finances_pages/PersonalFinancesDetails";
 import PersonalFinancesLayout from "./components/layouts/PersonanFinancesLayout";
 import DebtLayout from "./components/layouts/DebtLayout";
 import DebtAddNew from "./pages/debt/DebtAddNew";
@@ -126,15 +124,14 @@ const App = () => {
           <Route path="/2" element={<InvestmentTypesREITs />} />
           <Route path="/4" element={<InvestmentTypesEmergencyFund />} />
           <Route path="networth" element={<NetworthLayout />}>
-            <Route path="networth/" element={<Consolidated />} />
+            <Route path="networth" element={<Consolidated />} />
             <Route
-              path="networth/diversification"
+              path="networth/diversification/"
               element={<Diversification />}
             />
             <Route path="networth/holding" element={<Holding />} />
           </Route>
           <Route path="assets" element={<AssetsLayout />}>
-            <Route index element={<Assets />} />
             <Route path="bonds" element={<Bonds />} />
             <Route path="assetnotes" element={<AssetNotes />} />
             <Route path="emergencyfund" element={<EmergencyFund />} />
@@ -145,11 +142,10 @@ const App = () => {
             <Route path="valuereserve" element={<ValueReserve />} />
             <Route path="wheretoinvest" element={<WhereToInvest />} />
           </Route>
-          <Route element={<FinancesLayout />}>
-            <Route path="finances" element={<Finances />} />
-            <Route element={<DebtLayout />}>
-              <Route
-                path="finances/debt/"
+          <Route element={<FinancesLayout />}>            
+            <Route path="finances"  element={<DebtLayout />}>
+              <Route              
+                path="debt/"               
                 element={
                   <Debt
                     debtData={debtData}
@@ -159,25 +155,25 @@ const App = () => {
                 }
               />
               <Route
-                path="finances/debt/addnewdebt"
+                path="debt/addnewdebt"
                 element={<DebtAddNew addDebt={addDebt} />}
               />
               <Route
-                path="finances/debt/graphics"
+                path="debt/graphics"
                 element={<DebtGraphics debtData={debtData} />}
               />
               <Route
-                path="finances/debt/debttable"
+                path="debt/debttable"
                 element={<DebtTable debtData={debtData} />}
               />
             </Route>
             <Route path="finances/investments" element={<InvestmentsLayout />}>
               <Route
-                path="finances/investments/purchases"
+                path="investments/purchases"
                 element={<Purchases addToPortfolio={addToPortfolio} />}
               />
               <Route
-                path="finances/investments/portfolio"
+                path="investments/portfolio"
                 element={
                   <Portfolio
                     portfolioItems={portfolioItems}
@@ -186,15 +182,15 @@ const App = () => {
                 }
               />
               <Route
-                path="finances/investments/compoundinterest"
+                path="investments/compoundinterest"
                 element={<CompoundInterest />}
               />
             </Route>
-            <Route element={<PersonalFinancesLayout />}>
+            <Route  path="finances/personalfinances" element={<PersonalFinancesLayout />}>
               <Route
-                path="finances/personalfinances/details"
+                path="personalfinances/incomevsexpenditure"
                 element={
-                  <Details
+                  <IncomevsExpenditure
                     personalFinanceData={personalFinanceData}
                     editPersonalFinance={editPersonalFinance}
                     deletePersonalFinance={deletePersonalFinance}
@@ -202,15 +198,15 @@ const App = () => {
                 }
               />
               <Route
-                path="finances/personalfinances/newdata"
+                path="personalfinances/newdata"
                 element={<NewData addPersonalFinance={addPersonalFinance} />}
               />
               <Route
-                path="finances/personalfinances/graphics"
+                path="personalfinances/graphics"
                 element={<Graphics personalFinanceData={personalFinanceData} />}
               />
               <Route
-                path="finances/personalfinances/tablepersonalfinances"
+                path="personalfinances/tablepersonalfinances"
                 element={
                   <TablePersonalFinances
                     personalFinanceData={personalFinanceData}

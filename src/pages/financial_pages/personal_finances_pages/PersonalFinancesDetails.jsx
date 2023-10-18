@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "../../../styles/PersonalFinancesPages.css";
 
-const Details = ({
+const IncomevsExpenditure = ({
   personalFinanceData,
   editPersonalFinance,
   deletePersonalFinance,
@@ -52,6 +52,95 @@ const Details = ({
     0
   );
 
+  const displayItems = 
+  personalFinanceData.map((personalFinance, index) => (
+    <li key={index}>
+      {editIndex === index ? (
+        <div className="container-edit-personal-finances">
+          <div >
+            {/* type */}
+            <div className="div-container-edit-personal-finances">
+              <label htmlFor={`type_${index}`}>Type</label>
+              <select
+                id={`type_${index}`}
+                defaultValue={personalFinance.type}
+              >
+                <option value="Income">Income</option>
+                <option value="Expenditure">Expenditure</option>
+              </select>
+            </div>
+            {/* category */}
+            <div className="div-container-edit-personal-finances">
+
+              <label htmlFor={`category_${index}`}>category:</label>
+              <input
+                type="text"
+                id={`category_${index}`}
+                defaultValue={personalFinance.category}
+              />
+            </div>
+            {/* date */}
+            <div className="div-container-edit-personal-finances">
+
+              <label htmlFor={`date_${index}`}>Date:</label>
+              <input
+                type="date"
+                id={`date_${index}`}
+                defaultValue={personalFinance.date}
+              />
+            </div>
+            {/* description */}
+            <div className="div-container-edit-personal-finances">
+
+              <label htmlFor={`description_${index}`}>Description:</label>
+              <input
+                type="text"
+                id={`description_${index}`}
+                defaultValue={personalFinance.description}
+              />
+            </div>
+            {/* amount */}
+            <div className="div-container-edit-personal-finances">
+
+              <label htmlFor={`amount_${index}`}>Amount:</label>
+              <input
+                type="number"
+                id={`amount_${index}`}
+                defaultValue={personalFinance.amount}
+              />
+            </div>
+
+            <button onClick={() => handleSaveClick(index)}>Save</button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className={personalFinance.type === "Expenditure" ? "expenditure div-container-show-finances" : "income div-container-show-finances"} >
+            <strong>Type:</strong> {personalFinance.type}
+            <br />
+            <>
+              <strong>Category:</strong>
+            </>{" "}
+            {personalFinance.category}
+            <br />
+            <strong>date:</strong> {personalFinance.date}
+            <br />
+            <strong>Description:</strong> {personalFinance.description}
+            <br />
+            <strong>Amount:</strong>{" "}
+            {formatCurrency(personalFinance.amount)}
+            <hr />
+            <div className="buttons-edit-save">
+            <button onClick={() => handleEditClick(index)}>Edit</button>
+            <button onClick={() => handleDeleteClick(index)}>
+              Delete
+            </button>
+            </div>
+          </div>
+        </>
+      )}
+    </li>
+  ))
   return (
     <div>
     <h1>Income vs Expenditure</h1>
@@ -69,94 +158,8 @@ const Details = ({
 
 <div className="div-container-income-expenditure">
       <ul className="ul-container-income-expenditure">
-        {personalFinanceData.map((personalFinance, index) => (
-          <li key={index}>
-            {editIndex === index ? (
-              <div className="container-edit-personal-finances">
-                <div >
-                  {/* type */}
-                  <div className="div-container-edit-personal-finances">
-                    <label htmlFor={`type_${index}`}>Type</label>
-                    <select
-                      id={`type_${index}`}
-                      defaultValue={personalFinance.type}
-                    >
-                      <option value="Income">Income</option>
-                      <option value="Expenditure">Expenditure</option>
-                    </select>
-                  </div>
-                  {/* category */}
-                  <div className="div-container-edit-personal-finances">
-
-                    <label htmlFor={`category_${index}`}>category:</label>
-                    <input
-                      type="text"
-                      id={`category_${index}`}
-                      defaultValue={personalFinance.category}
-                    />
-                  </div>
-                  {/* date */}
-                  <div className="div-container-edit-personal-finances">
-
-                    <label htmlFor={`date_${index}`}>Date:</label>
-                    <input
-                      type="date"
-                      id={`date_${index}`}
-                      defaultValue={personalFinance.date}
-                    />
-                  </div>
-                  {/* description */}
-                  <div className="div-container-edit-personal-finances">
-
-                    <label htmlFor={`description_${index}`}>Description:</label>
-                    <input
-                      type="text"
-                      id={`description_${index}`}
-                      defaultValue={personalFinance.description}
-                    />
-                  </div>
-                  {/* amount */}
-                  <div className="div-container-edit-personal-finances">
-
-                    <label htmlFor={`amount_${index}`}>Amount:</label>
-                    <input
-                      type="number"
-                      id={`amount_${index}`}
-                      defaultValue={personalFinance.amount}
-                    />
-                  </div>
-
-                  <button onClick={() => handleSaveClick(index)}>Save</button>
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className={personalFinance.type === "Expenditure" ? "expenditure div-container-show-finances" : "income div-container-show-finances"} >
-                  <strong>Type:</strong> {personalFinance.type}
-                  <br />
-                  <>
-                    <strong>Category:</strong>
-                  </>{" "}
-                  {personalFinance.category}
-                  <br />
-                  <strong>date:</strong> {personalFinance.date}
-                  <br />
-                  <strong>Description:</strong> {personalFinance.description}
-                  <br />
-                  <strong>Amount:</strong>{" "}
-                  {formatCurrency(personalFinance.amount)}
-                  <hr />
-                  <div className="buttons-edit-save">
-                  <button onClick={() => handleEditClick(index)}>Edit</button>
-                  <button onClick={() => handleDeleteClick(index)}>
-                    Delete
-                  </button>
-                  </div>
-                </div>
-              </>
-            )}
-          </li>
-        ))}
+        {/*  test here */}
+        {displayItems}
       </ul>
 
      </div>
@@ -165,4 +168,4 @@ const Details = ({
   );
 };
 
-export default Details;
+export default IncomevsExpenditure;
