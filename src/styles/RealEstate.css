@@ -1,0 +1,110 @@
+.button-edit-real-estate {
+    background-color: rgb(241, 241, 241);
+    border: none;
+    font-size: 20px;
+    padding: 5px; /* Add padding for better button appearance */
+    cursor: pointer; /* Add pointer cursor for buttons */
+  }
+  
+  .button-delete-real-estate {
+    background-color: rgb(241, 241, 241);
+    border: none;
+    font-size: 20px;
+    padding: 5px; /* Add padding for better button appearance */
+    cursor: pointer; /* Add pointer cursor for buttons */
+  }
+  
+  .img-edit-button-icon {
+    width: 25px;
+    transition: transform 0.2s; /* Add transition for smooth scaling */
+  }
+  
+  .img-delete-button-icon {
+    width: 25px;
+    transition: transform 0.2s; /* Add transition for smooth scaling */
+  }
+  
+  /* Apply the hover effect */
+  .img-edit-button-icon:hover {
+    transform: scale(1.2); /* Corrected 'scale' property */
+  }
+  
+  .img-delete-button-icon:hover {
+    transform: scale(1.2); /* Corrected 'scale' property */
+  }
+  
+  /* Style for labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for input fields */
+  input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  /* Style for select dropdown */
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  /* Apply additional styling for your buttons */
+  .button-edit-real-estate {
+    background-color: rgb(241, 241, 241);
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .button-delete-real-estate {
+    background-color: rgb(241, 241, 241);
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .img-edit-button-icon {
+    width: 25px;
+    transition: transform 0.2s;
+  }
+  
+  .img-delete-button-icon {
+    width: 25px;
+    transition: transform 0.2s;
+  }
+  
+  .img-edit-button-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .img-delete-button-icon:hover {
+    transform: scale(1.2);
+  }
+  /* Style for Add and Save buttons */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

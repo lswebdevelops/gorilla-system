@@ -25,7 +25,7 @@ const Debt = ({ debtData, editDebt, deleteDebt }) => {
 
     // Call the editDebt function passed as a prop to update the debt item
     editDebt(editedDebt, index);
-
+    
     // Clear the edit mode by setting editIndex to null
     setEditIndex(null);
   };
