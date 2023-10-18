@@ -63,3 +63,8 @@ a {
   color: #161616;
   background-color: rgb(241, 241, 241)
 }
+
+.assets-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+}
