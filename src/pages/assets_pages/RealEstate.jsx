@@ -112,6 +112,7 @@ const RealEstate = () => {
     <div>
       <h1>Real Estate</h1>
       <h2>Types of Real Estate</h2>
+      <div className="realestate-container">
       <label htmlFor="selection">
         Select
         <select
@@ -159,7 +160,7 @@ const RealEstate = () => {
           onChange={(e) => setSoldfor(e.target.value)}
         />
       </label>
-      <button
+      <button   className="button-save-add-real-estate"
         onClick={
           editIndex === null ? addItems : () => saveEditedItem(editIndex)
         }
@@ -200,8 +201,8 @@ const RealEstate = () => {
                     >
                       <img
                       className="img-edit-button-icon"
-                        src="/src/assets/icons/icons8-edit-100.png"
-                        alt="delete"
+                        src="https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/icons/icons8-edit-100.png"
+                        alt="edit"
                       />
                     </button>
                     <button
@@ -210,7 +211,7 @@ const RealEstate = () => {
                     >
                       <img
                       className="img-delete-button-icon"
-                        src="/src/assets/icons/icons8-delete-100.png"
+                        src="https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/icons/icons8-delete-100.png"
                         alt="delete"
                       />
                     </button>
@@ -225,6 +226,8 @@ const RealEstate = () => {
         <p>
           Total Profit: <span>{formatCurrency(calculateTotalProfit())}</span>
         </p>
+      </div>
+
       </div>
     </div>
   );
