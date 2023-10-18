@@ -10,6 +10,7 @@ const Portfolio = ({ portfolioItems, totalPortfolio }) => {
           <tr>
             <th>Symbol</th>
             <th>Name</th>
+            <th>Type</th>
             <th>Quantity</th>
             <th>Sub Total</th>
           </tr>
@@ -19,6 +20,7 @@ const Portfolio = ({ portfolioItems, totalPortfolio }) => {
             <tr key={index}>
               <td>{item.symbol}</td>
               <td>{item.name}</td>
+              <td>{item.type}</td>
               <td>{item.quantity}</td>
               <td>{item.subTotal}</td>
             </tr>
