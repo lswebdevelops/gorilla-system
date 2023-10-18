@@ -153,6 +153,11 @@ ul {
   }
 }
 
+.save-button-link {
+  background-color: rgb(241, 241, 241);
+  border: none;
+}
+
 
 /* Style the second button differently if needed */
 .div-container-show-finances button:last-child {

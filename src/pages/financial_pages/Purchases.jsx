@@ -1,16 +1,14 @@
+
 import { useState, useEffect } from "react";
 import "../../styles/Investiments.css";
 import { Link } from "react-router-dom";
-
 const Purchases = ({ addToPortfolio }) => {
   const apiKey = "21f8243f104a435c88432ff1ab7a7650";
   const endpoint = "https://api.twelvedata.com/quote";
-
   const [symbol, setSymbol] = useState("AAPL"); // Initialize with AAPL or any default value
   const [stockDataList, setStockDataList] = useState([]);
   const [newStockData, setNewStockData] = useState(null);
   const [price, setPrice] = useState(null);
-
   useEffect(() => {
     if (newStockData) {
       setStockDataList([...stockDataList, newStockData]);
@@ -18,7 +16,6 @@ const Purchases = ({ addToPortfolio }) => {
       setPrice(newStockData.price);
     }
   }, [newStockData, stockDataList]);
-
   // Function to fetch stock data by symbol
   async function fetchStockData(symbol) {
     try {
@@ -26,7 +23,6 @@ const Purchases = ({ addToPortfolio }) => {
         `${endpoint}?symbol=${symbol}&apikey=${apiKey}`
       );
       const data = await response.json();
-
       if (data && data.price !== "No Data") {
         return data;
       } else {
@@ -39,12 +35,10 @@ const Purchases = ({ addToPortfolio }) => {
       return null;
     }
   }
-
   // Function to handle adding a new stock to the table
   const handleSeach = async () => {
     const tickerInput = document.getElementById("tickerInput");
     const newSymbol = tickerInput.value.toUpperCase(); // Ensure uppercase symbol
-
     if (newSymbol) {
       const data = await fetchStockData(newSymbol);
       if (data) {
@@ -53,7 +47,6 @@ const Purchases = ({ addToPortfolio }) => {
             `https://api.twelvedata.com/price?symbol=${newSymbol}&apikey=${apiKey}`
           );
           const priceData = await priceResponse.json();
-
           if (priceData.price) {
             const newStock = {
               symbol: newSymbol,
@@ -62,10 +55,9 @@ const Purchases = ({ addToPortfolio }) => {
               currency: data.currency,
               exchange: data.exchange,
               quantity: 1, // Initialize quantity to 1
-              type: "stock",
               subTotal: priceData.price, // Initialize subTotal to the price
+              type: "stock",
             };
-
             setStockDataList([...stockDataList, newStock]);
             tickerInput.value = ""; // Clear the input field
           } else {
@@ -77,7 +69,6 @@ const Purchases = ({ addToPortfolio }) => {
       }
     }
   };
-
   return (
     <div className="investments-container">
       <h1>Purchases</h1>
@@ -119,7 +110,7 @@ const Purchases = ({ addToPortfolio }) => {
               <td>{stockData.price}</td>
               <td>{stockData.currency}</td>
               <td>
-                <select
+                <select                
                   name={`type-${index}`} // Use a unique name for each select element
                   id={`type-${index}`} // Use a unique id for each select element
                   value={stockData.type} // Set the value to stockData.type
@@ -133,9 +124,9 @@ const Purchases = ({ addToPortfolio }) => {
                     setStockDataList(updatedStockDataList);
                   }}
                 >
-                  <option value="stock">Stock</option>
+                 <option value="stock">Stock</option>
                   <option value="bond">Bond</option>
-                  <option value="reit">REITs</option>
+                  <option value="reit">REIT</option>
                 </select>
               </td>
               <td>{stockData.exchange}</td>
@@ -181,5 +172,4 @@ const Purchases = ({ addToPortfolio }) => {
     </div>
   );
 };
-
 export default Purchases;

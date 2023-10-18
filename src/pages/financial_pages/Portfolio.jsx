@@ -2,6 +2,7 @@ import  { useEffect, useState, useRef } from "react";
 
 const Portfolio = ({ portfolioItems, totalPortfolio }) => {
   
+  
   return (
     <div>
       <h1>My Purchases</h1>

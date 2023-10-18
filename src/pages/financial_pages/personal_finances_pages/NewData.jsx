@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import "../../../styles/PersonalFinancesPages.css";
 import { useState } from "react";
 
 const NewData = ({ addPersonalFinance }) => {
-  // 
+  //
   // Initialize form state
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
@@ -33,44 +34,40 @@ const NewData = ({ addPersonalFinance }) => {
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();    
-   
-  
+    e.preventDefault();
 
-  // Create a new finance object with form data
+    // Create a new finance object with form data
 
-  const newPersonalFinance = {
-    type,
-    category,
-    date,
-    description,
-    amount,
+    const newPersonalFinance = {
+      type,
+      category,
+      date: date,
+      description,
+      amount: 0,
+    };
+
+    //call the add finance from props
+
+    addPersonalFinance(newPersonalFinance);
+
+    // Clear the form fields
+    setType("Income");
+    setCategory("");
+    setDate("");
+    setDescription("");
+    setAmount("");
   };
-
-  //call the add finance from props
-
-  addPersonalFinance(newPersonalFinance);
-
-  // Clear the form fields
-  setType("Income");
-  setCategory("");
-  setDate("");
-  setDescription(""); 
-  setAmount("");
-};
   return (
     <>
       <h1>Consolidated Personal Finances </h1>
-      <p >Here you can add your income and expenses</p>
+      <p>Here you can add your income and expenses</p>
       <div className="form-finances-container">
-        <form onSubmit={handleSubmit}>
+        <form>
           {/* type  */}
           <div>
             <label htmlFor="type">
               Type:
-              <select 
-              required
-              onChange={handleTypeChange}>
+              <select required onChange={handleTypeChange}>
                 <option></option>
                 <option value="Income">Income</option>
                 <option value="Expenditure">Expenditure</option>
@@ -86,7 +83,6 @@ const NewData = ({ addPersonalFinance }) => {
                 type="text"
                 id="category"
                 value={category}
-                required
                 onChange={handleCategoryChange}
               />
             </label>
@@ -99,7 +95,6 @@ const NewData = ({ addPersonalFinance }) => {
                 type="date"
                 id="date"
                 value={date}
-                required
                 onChange={handleDateChange}
               />
             </label>
@@ -131,9 +126,19 @@ const NewData = ({ addPersonalFinance }) => {
               />
             </label>
           </div>
-          <button type="submit" className="save-button">
-            Save
-          </button>
+
+          <Link
+            className="save-button-link"
+            to={`/finances/personalfinances/personalfinances/incomevsexpenditure`}
+          >
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className="save-button"
+            >
+              Save
+            </button>
+          </Link>
         </form>
       </div>
     </>
