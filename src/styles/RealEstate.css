@@ -130,8 +130,72 @@ label {
   font-weight: 600;
   ;
 }
-.realestate-container{
-    margin-left: 10px;
-    margin-right: 10px;
-    ;
+
+.explanation{
+  margin: 0;
+  padding:0;
+  background-color: rgb(255, 254, 252); 
+  flex-direction: column;
+  align-items: flex-start;
+  min-width:350px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+  padding: 28px 14px 28px 14px;
+
+  border-radius: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  
+}
+.explanation-select{
+  margin: 0;
+  padding:0;
+  background-color: rgb(255, 254, 252); 
+  flex-direction: column;
+  align-items: flex-start;
+  min-width:350px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+  padding: 8px 14px 8px 14px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.list-real-estate-ul-h3{
+  margin-top: 38px;
+  padding: 8px;
+ 
+}
+.realestate-container-upper-div {
+ 
+  padding: 8px;
+  margin-bottom: 80px;
+}
+
+  
+/* for negative total amount  */
+.negative-amount {
+  color: red;
+}
+
+/*  for positive total amount */
+.positive-amount {
+  color: green;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  border: 1px solid black;
+  min-width: 540px;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 6px;
+  border: 1px solid black;
+}
+
+.divTable {
+  overflow: scroll;
+  text-align: left;
 }
