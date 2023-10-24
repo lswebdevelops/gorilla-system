@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@300;400;500;700&family=Vina+Sans&display=swap');
+
+
+.notes-assets-container textarea {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 1rem;
+    font-family: Roboto;
+    font-weight: 500;
+    width: 457px;
+    height: 349px;
+    line-height: 1.4;
+    ;
+}
+.save-note{
+    width: 130px;
+    height: 38px;
+    border: rgb(198, 198, 198) solid 1px;;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    padding: 4px;
+    box-shadow: 2px 3px 3px gray;
+    background-color:rgb(212, 222, 188);
+}
+
+
+
+
+.notes-assets-container  span {
+    width: 130px;
+    height: 38px;
+    border: rgb(198, 198, 198) solid 1px;;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    padding: 4px;
+    box-shadow: 2px 3px 3px gray;
+    background-color:rgb(212, 222, 188);
+}
+
+.save-note:hover {
+ scale: 1.1;
+ margin-left: 15px;
+}
+
+.saved-note {
+    width: 130px;
+    height: 38px;
+    border: rgb(198, 198, 198) solid 1px;;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    padding: 4px;
+    box-shadow: 2px 3px 3px gray;
+    background-color:rgb(55, 199, 30);
+}

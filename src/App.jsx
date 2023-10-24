@@ -123,6 +123,7 @@ const App = () => {
           <Route path="/3" element={<InvestmentTypesBonds />} />
           <Route path="/2" element={<InvestmentTypesREITs />} />
           <Route path="/4" element={<InvestmentTypesEmergencyFund />} />
+          
           <Route path="networth" element={<NetworthLayout />}>
             <Route path="networth" element={<Consolidated />} />
             <Route
