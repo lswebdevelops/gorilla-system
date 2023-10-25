@@ -12,6 +12,27 @@
   color: #000;
   border-radius: 5px;
   display: inline-block;
+  margin-right: 14px;;
+ 
+ 
+}
+
+.buttons-main-items {
+  background-color: rgb(241, 241, 241);
+  border: none;
+  font-family: Roboto;
+  padding: 5px 10px;
+  width: 150px;
+  margin-right: 24px; 
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow:  1px 1px 1px 1px #777;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 .link-is-active{
   background-color: rgb(168, 91, 91);
@@ -22,7 +43,18 @@ div {
   background-color: rgb(241, 241, 241);
   
 }
+.stocks, .reits, .bonds {
+  background-color: #633434;
+  color: white;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 23px;
 
+
+  ;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
