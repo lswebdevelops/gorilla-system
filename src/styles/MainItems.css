@@ -1,59 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500;600&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@300;400;500;700&family=Vina+Sans&display=swap");
 
 .link-main-items {
-  background-color: rgb(241 241 241);
+  background-color: rgb(241, 241, 241);
   border: none;
   font-family: Roboto;
+  padding: 5px 10px;
+  width: 150px;
+  margin-right: 24px; 
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+  display: inline-block;
+}
+.link-is-active{
+  background-color: rgb(168, 91, 91);
+  color: white;
 }
 h2,
-
 div {
-  background-color: rgb(241 241 241);
+  background-color: rgb(241, 241, 241);
+  
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  /* margin-left: 15px;;
-    margin-right: 15px;; */
-  max-width: 900px;
+ min-width: 650px;
   border: 1px solid black;
   min-width: 540px;
-  background-color: rgb(241 241 241);
-
+  background-color: rgb(241, 241, 241);
+  margin: 0 auto;
+  overflow: scroll;
 }
 
 th,
 td {
   text-align: center;
-  padding: 6px;
   border: 1px solid black;
   min-width: 130px;
-  background-color: rgb(241 241 241);
+  background-color: rgb(241, 241, 241);
 }
 
 .divTable-main-items {
   overflow: scroll;
   text-align: left;
-  background-color: rgb(241 241 241);
-  max-width: 920px;
-  margin-left: 13px;
-  border-radius: 14px;
+  background-color: rgb(241, 241, 241);
+ min-width: 650px;
+  margin: 0 auto;
   
 }
-.divTable-main-items-container{
-  max-width: 950px;
-  box-shadow: 1px 1px 1px 1px rgb(180, 180, 180);
-  background-color: aliceblue;
-  border-radius: 14px;
-margin-bottom: 83px;
-margin-left: 34px;
-padding: 38px;
 
+.divTable-main-items-container {
+ min-width: 650px;
+  box-shadow: 1px 1px 1px 1px rgb(180, 180, 180);
+  background-color: aliceblue;  
+  margin: 0 auto;
+  overflow: scroll;
+ border-radius: 13px;
+ margin-bottom: 83px;
+ margin-left: 15px;
+ margin-right: 15px;
 }
 
 h1 {
-  max-width: 950px;
+ min-width: 650px;
   background-color: aliceblue;
-  border-radius: 14px;
+  
+}
 
+.td-description {
+  min-width: 440px;
+  ;
 }
