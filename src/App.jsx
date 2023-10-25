@@ -13,6 +13,7 @@ import InvestmentTypesEmergencyFund from "./pages/investment_types_pages/Investm
 import Layout from "./components/layouts/Layout";
 import AssetsLayout from "./components/layouts/AssetsLayout";
 import Bonds from "./pages/assets_pages/Bonds";
+import MainItems from "./pages/assets_pages/MainItems";
 import AssetNotes from "./pages/assets_pages/AssetNotes";
 import EmergencyFund from "./pages/assets_pages/EmergencyFund";
 import FixedIncome from "./pages/assets_pages/FixedIncome";
@@ -134,6 +135,7 @@ const App = () => {
           </Route>
           <Route path="assets" element={<AssetsLayout />}>
             <Route path="bonds" element={<Bonds />} />
+            <Route path="mainitems" element={<MainItems />} />
             <Route path="assetnotes" element={<AssetNotes />} />
             <Route path="emergencyfund" element={<EmergencyFund />} />
             <Route path="fixedincome" element={<FixedIncome />} />
