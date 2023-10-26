@@ -139,7 +139,7 @@ const App = () => {
             <Route path="bonds" element={<Bonds />} />
             <Route path="mainitems" element={<MainItemsLayout />}>
             <Route path="mainitems" element={<MainItems />}/>
-              <Route path="mainitems/details" element={<MainItemsDetails />} />  
+              <Route path="mainitems/:id" element={<MainItemsDetails />} />  
             </Route>
             <Route path="assetnotes" element={<AssetNotes />} />
             <Route path="emergencyfund" element={<EmergencyFund />} />
