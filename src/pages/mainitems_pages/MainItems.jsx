@@ -1,4 +1,4 @@
-import { Link, NavLink, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import stocksData from "../../assets/data/StockBondsREITs";
 import "../../styles/MainItems.css";
 
@@ -22,7 +22,7 @@ const MainItems = () => {
         <td>{investment.type}</td>
         <td className="td-description">{investment.description}</td>
         <td>
-          <Link className="link-main-items" to={`${investment.website}`}>
+          <Link className="link-main-items website-main-items" to={`${investment.website}`}>
             {investment.website}
           </Link>
         </td>
@@ -32,7 +32,7 @@ const MainItems = () => {
 
   return (
     <div className="divTable-main-items-container">
-      <h1>
+      <h1 className="h1-main-items">
         Here you will find the ten most important (in my opnion) stocks, bonds,
         REATs, etc
       </h1>
@@ -70,7 +70,7 @@ const MainItems = () => {
       <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=bonds"}>Bonds</NavLink>
       <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=reits"}>REITs</NavLink>
       <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=stocks"}>Stocks</NavLink> */}
-      <table>
+      <table className="table-main-items">
         <thead>
           <tr>
             <th>Ticker</th>
@@ -78,7 +78,7 @@ const MainItems = () => {
             {/* <th>Sector</th> */}
             <th>Type</th>
             <th>Description</th>
-            <th>Website</th>
+            <th className="website-main-items">Website</th>
           </tr>
         </thead>
         <tbody>{investmentElements}</tbody>

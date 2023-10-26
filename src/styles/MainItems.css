@@ -30,32 +30,40 @@
   border-radius: 5px;
   display: inline-block;
   box-shadow:  1px 1px 1px 1px #777;
-  font-size: 1rem;
-  margin-bottom: 12px;
+  /* font-size: 1rem; */
+  margin-bottom: 32px;  
+  margin-top: 12px;
   font-weight: 700;
 }
 .link-is-active{
   background-color: rgb(168, 91, 91);
   color: white;
+ 
 }
-h2,
-div {
-  background-color: rgb(241, 241, 241);
-  
-}
+
 .stocks, .reits, .bonds {
-  background-color: #633434;
-  color: white;
+  color: #ffead0;
+  background-color: #e17654;
   width: 150px;
   height: 35px;
   border-radius: 5px;
   border: none;
   margin-right: 23px;
-
-
+  font-weight: 700;
+  box-shadow: 1px 1px 1px 1px rgb(140, 121, 121);;
+  /* font-size: 1rem; */
   ;
 }
-table {
+.website-main-items {
+  min-width: 320px;;
+}
+.buttons-main-items:hover{
+  scale: 1.1;
+}
+.stocks:hover, .reits:hover, .bonds:hover {
+ scale: 1.1;
+}
+.table-main-items {
   border-collapse: collapse;
   border-spacing: 0;
  min-width: 650px;
@@ -66,8 +74,8 @@ table {
   overflow: scroll;
 }
 
-th,
-td {
+.table-main-items th,
+.table-main-items td {
   text-align: center;
   border: 1px solid black;
   min-width: 130px;
@@ -93,11 +101,14 @@ td {
  margin-bottom: 83px;
  margin-left: 15px;
  margin-right: 15px;
+ padding: 10px;
+ 
 }
 
-h1 {
+.h1-main-items {
  min-width: 650px;
   background-color: aliceblue;
+  margin-left: 0px;
   
 }
 

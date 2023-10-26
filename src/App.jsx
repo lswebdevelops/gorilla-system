@@ -13,7 +13,7 @@ import InvestmentTypesEmergencyFund from "./pages/investment_types_pages/Investm
 import Layout from "./components/layouts/Layout";
 import AssetsLayout from "./components/layouts/AssetsLayout";
 import Bonds from "./pages/assets_pages/Bonds";
-import MainItems from "./pages/assets_pages/MainItems";
+import MainItems from "./pages/mainitems_pages/MainItems";
 import AssetNotes from "./pages/assets_pages/AssetNotes";
 import EmergencyFund from "./pages/assets_pages/EmergencyFund";
 import FixedIncome from "./pages/assets_pages/FixedIncome";
@@ -40,6 +40,8 @@ import Gorillasgram from "./pages/gorillasgram_pages/Gorillasgram";
 import GorillasgramLayout from "./components/layouts/Gorrilasgram_layout";
 import CreateMemes from "./pages/gorillasgram_pages/CreateMemes";
 import CompoundInterest from "./pages/financial_pages/CompoundInterest";
+import MainItemsDetails from "./pages/mainitems_pages/MainItemsDetails";
+import MainItemsLayout from "./components/layouts/MainItemsLayout";
 
 const App = () => {
   const [portfolioItems, setPortfolioItems] = useState([]);
@@ -135,7 +137,10 @@ const App = () => {
           </Route>
           <Route path="assets" element={<AssetsLayout />}>
             <Route path="bonds" element={<Bonds />} />
-            <Route path="mainitems" element={<MainItems />} />
+            <Route path="mainitems" element={<MainItemsLayout />}>
+            <Route path="mainitems" element={<MainItems />}/>
+              <Route path="mainitems/details" element={<MainItemsDetails />} />  
+            </Route>
             <Route path="assetnotes" element={<AssetNotes />} />
             <Route path="emergencyfund" element={<EmergencyFund />} />
             <Route path="fixedincome" element={<FixedIncome />} />
