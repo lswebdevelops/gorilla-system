@@ -42,6 +42,7 @@ import CreateMemes from "./pages/gorillasgram_pages/CreateMemes";
 import CompoundInterest from "./pages/financial_pages/CompoundInterest";
 import MainItemsDetails from "./pages/mainitems_pages/MainItemsDetails";
 import MainItemsLayout from "./components/layouts/MainItemsLayout";
+import NotFound from './pages/NotFound';
 
 const App = () => {
   const [portfolioItems, setPortfolioItems] = useState([]);
@@ -122,6 +123,8 @@ const App = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          {/* catch all wrong urls */}
+          <Route path="*" element={<NotFound />} />
           <Route path="/1" element={<InvestmentTypesStocks />} />
           <Route path="/3" element={<InvestmentTypesBonds />} />
           <Route path="/2" element={<InvestmentTypesREITs />} />

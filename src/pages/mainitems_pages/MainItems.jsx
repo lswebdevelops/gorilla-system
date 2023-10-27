@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import stockData from "../../assets/data/StockBondsREITs";
 import "../../styles/MainItems.css";
 
@@ -16,27 +16,25 @@ const MainItems = () => {
   const investmentElements = displayedElements.map((investment, index) => (
     <>
       <tr key={index}>
-      <td>
-  <Link 
-    className="link-main-items" 
-    to={`./${investment.id}`}
-    //  passing the state with the link
-    state={{
-      search: `?${searchParams.toString()}`,
-      //for the type on the back button text:
-      type: typeFilter,
-    }}
-     >
-      {investment.ticker}
-  </Link>
-</td>
-
+        <td>
+          <NavLink
+            className="link-main-items"
+            to={`./${investment.id}`}
+            //  passing the state with the link
+            state={{
+              search: `?${searchParams.toString()}`,
+              //for the type on the back button text:
+              type: typeFilter,
+            }}
+          >
+            {investment.ticker}
+          </NavLink>
+        </td>
 
         <td>{investment.name}</td>
         {/* <td>{investment.sector}</td> */}
         <td>{investment.type}</td>
         <td className="td-description">{investment.description}</td>
-     
       </tr>
     </>
   ));
@@ -49,21 +47,19 @@ const MainItems = () => {
       </h1>
 
       <button
-        className={`${typeFilter ===  'stock' ? 'stock' :  `buttons-main-items`}`}
+        className={`${typeFilter === "stock" ? "stock" : `buttons-main-items`}`}
         onClick={() => setSearchParams({ type: "stock" })}
       >
         Stocks
       </button>
       <button
-                className={`${typeFilter ===  'bond' ? 'bond' :  `buttons-main-items`}`}
-
+        className={`${typeFilter === "bond" ? "bond" : `buttons-main-items`}`}
         onClick={() => setSearchParams({ type: "bond" })}
       >
         Bonds
       </button>
       <button
-               className={`${typeFilter ===  'reit' ? 'reit' :  `buttons-main-items`}`}
-
+        className={`${typeFilter === "reit" ? "reit" : `buttons-main-items`}`}
         onClick={() => setSearchParams({ type: "reit" })}
       >
         REITs
@@ -77,10 +73,6 @@ const MainItems = () => {
         </button>
       ) : null}
 
-      {/* <NavLink className="link-is-active link-main-items" to={"/assets/mainitems?="}>Clear Filters</NavLink>
-      <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=bond"}>Bonds</NavLink>
-      <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=reit"}>REITs</NavLink>
-      <NavLink className="link-is-active link-main-items"  to={"/assets/mainitems?type=stock"}>Stocks</NavLink> */}
       <table className="table-main-items">
         <thead>
           <tr>
@@ -89,7 +81,6 @@ const MainItems = () => {
             {/* <th>Sector</th> */}
             <th>Type</th>
             <th>Description</th>
-            
           </tr>
         </thead>
         <tbody>{investmentElements}</tbody>
