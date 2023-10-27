@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import stocksData from "../../assets/data/StockBondsREITs";
 import { useEffect, useState } from "react";
+import BrokenCompany from "./BrokenCompany";
 
 const MainItemsDetails = () => {
   const { id } = useParams();
@@ -73,9 +74,7 @@ const MainItemsDetails = () => {
        </div>
           
         </div>
-      ) : (
-        <p>Company not found</p>
-      )}
+      ) : (<BrokenCompany />)}
     </div>
   );
 };

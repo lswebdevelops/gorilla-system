@@ -38,7 +38,6 @@
 .link-is-active {
   background-color: rgb(168, 91, 91);
   color: white;
-
 }
 
 .stock,
@@ -57,8 +56,7 @@
 }
 .website-main-items {
   min-width: 320px;
-  font-size: 1.5rem;;
-  
+  font-size: 1.5rem;
 }
 
 .buttons-main-items:hover {
@@ -172,4 +170,31 @@
 .back-link-main-items:hover {
   padding: 14px;
   cursor: pointer;
+}
+
+.bronken-company-div {
+  position: absolute;
+  margin: 0;
+  left: 15px;
+  padding: 0;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 4px 1px grey;
+  margin: auto;
+  width: 450px;
+  border-radius: 12px;
+  margin-top: 33px;
+  display: flex;
+  padding: 4px 2px 32px 2px;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.bronken-company-div img {
+  width: 350px;
+  border-radius: 12px;
+}
+.bronken-company-div h1 {
+  font-size: 1.2rem;
 }
