@@ -6,7 +6,8 @@
     box-shadow: 1px 1px 4px 1px grey;
     margin: auto;
     width: 450px;
-    ;
+    border-radius: 12px;
+
     display: flex;
     padding: 10px;
     justify-content: center;
