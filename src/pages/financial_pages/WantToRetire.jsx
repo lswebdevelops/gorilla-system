@@ -38,7 +38,7 @@ const WantToRetire = () => {
       parseFloat(others);
 
     setMonthlyExpenses(totalExpenses);
-// https://www.wikihow.com/Calculate-Compound-Interest
+    // https://www.wikihow.com/Calculate-Compound-Interest
 
     if (!isNaN(totalYearsOfSaving)) {
       const PMT = totalExpenses; // principal
@@ -60,33 +60,31 @@ const WantToRetire = () => {
       minimumFractionDigits: 2,
     }).format(amount);
   };
- 
 
   //P = FV / (1 + i/c)^(n*c)
 
-// "FV" is the future value. This is the result of the calculation.
-// "P" monthly adition to be calculated
-// "i" represents the annual interest rate.
-// "c" represents the compounding frequency (how many times the interest compounds each year).
-// "n" represents the number of years being measured.
+  // "FV" is the future value. This is the result of the calculation.
+  // "P" monthly adition to be calculated
+  // "i" represents the annual interest rate.
+  // "c" represents the compounding frequency (how many times the interest compounds each year).
+  // "n" represents the number of years being measured.
 
-let FV = monthlyExpenseByRetirement
-const i = rate /100
-const c = 12
-const n = totalYearsOfSaving
-let P = FV / (1 + i/c)**(n*c)
- const calculateTotalSHoulInvest = () => {
+  let FV = monthlyExpenseByRetirement;
+  const i = rate / 100;
+  const c = 12;
+  const n = totalYearsOfSaving;
+  let P = FV / (1 + i / c) ** (n * c);
+  const calculateTotalSHoulInvest = () => {
     const PMT = 0; // principal
-      const i = parseFloat(rate / 100); // inflation
-      const c = 12; // constant (12 months in a year for compound interest)
-      const r = P; // monthly addition
-      const n = totalYearsOfSaving; // years of compound interest
-      const FV =
-        PMT * (1 + i / c) ** (n * c) +
-        (r * ((1 + i / c) ** (n * c) - 1)) / (i / c);
- return FV
- }
-
+    const i = parseFloat(rate / 100); // inflation
+    const c = 12; // constant (12 months in a year for compound interest)
+    const r = P; // monthly addition
+    const n = totalYearsOfSaving; // years of compound interest
+    const FV =
+      PMT * (1 + i / c) ** (n * c) +
+      (r * ((1 + i / c) ** (n * c) - 1)) / (i / c);
+    return FV;
+  };
 
   return (
     <div className="container-wanttoretire">
@@ -94,7 +92,7 @@ let P = FV / (1 + i/c)**(n*c)
       <h2>First let&apos;s find out your monthly expenses:</h2>
       <div>
         <label htmlFor="food">
-          food:
+          Food:
           <input
             type="number"
             id="food"
@@ -103,7 +101,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="transportation">
-          transportation:
+          Transportation:
           <input
             type="number"
             id="transportation"
@@ -112,7 +110,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="healthCare">
-          healthCare:
+          Health Care:
           <input
             type="number"
             id="healthCare"
@@ -121,7 +119,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="housing">
-          housing:
+          Housing:
           <input
             type="number"
             id="housing"
@@ -130,7 +128,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="education">
-          education:
+          Education:
           <input
             type="number"
             id="education"
@@ -139,7 +137,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="taxes">
-          taxes:
+          Taxes:
           <input
             type="number"
             id="taxes"
@@ -148,7 +146,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="others">
-          others:
+          Miscelaneous:
           <input
             type="number"
             id="others"
@@ -157,10 +155,6 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
       </div>
-      <p>
-        Your monthly expenses totay:
-        <span>{formatCurrency(monthlyExpenses)}</span>
-      </p>
 
       <div>
         <label htmlFor="age">
@@ -172,6 +166,7 @@ let P = FV / (1 + i/c)**(n*c)
             onChange={(e) => setAgeNow(e.target.value)}
           />
         </label>
+        <hr />
         <label htmlFor="age-to-retire">
           Age to retire:
           <input
@@ -182,7 +177,7 @@ let P = FV / (1 + i/c)**(n*c)
           />
         </label>
         <label htmlFor="inflation-last-ten-years">
-        USA average inflation in the last ten years:
+          USA average inflation for the last ten years:
           <input
             type="number"
             id="inflation-last-ten-years"
@@ -193,26 +188,74 @@ let P = FV / (1 + i/c)**(n*c)
         {/* <p>Total years of saving: {totalYearsOfSaving}</p> */}
       </div>
 
-      <button className="button-monthly-expenses-retirement" onClick={handleCalculate}>Calculate monthly expenses in {totalYearsOfSaving} years </button>
+      <button
+        className="button-monthly-expenses-retirement"
+        onClick={handleCalculate}
+      >
+        Calculate monthly expenses in {totalYearsOfSaving.toFixed(0)} years{" "}
+      </button>
+      <p>
+        Your monthly expenses today:
+        <span>{formatCurrency(monthlyExpenses)}</span>
+      </p>
+
       <p>
         Your monthly expenses by retirement:
-        <span> {isNaN(monthlyExpenseByRetirement) ? "NaN" : formatCurrency(monthlyExpenseByRetirement)}</span>
+        <span>
+          {" "}
+          {isNaN(monthlyExpenseByRetirement)
+            ? "NaN"
+            : formatCurrency(monthlyExpenseByRetirement)}
+        </span>
       </p>
-<hr />
-    <p>How much will you need in {totalYearsOfSaving} years to retire having a monthly cost of {formatCurrency(monthlyExpenseByRetirement)}?</p>
-    <label htmlFor="SandP500-last-ten-years">
+      <hr />
+      <p>
+        How much will you need in {totalYearsOfSaving.toFixed(0)} years to
+        retire having a monthly cost of{" "}
+        {formatCurrency(monthlyExpenseByRetirement)}?
+      </p>
+      <label htmlFor="SandP500-last-ten-years">
         S&P 500 gains in the last ten years(%):
-          <input
-            type="number"
-            id="SandP500-last-ten-years"
-            value={rate}
-            onChange={(e) => setRate(e.target.value)}
-          />
-        </label>
-        <p>Monthly investment necessary to retire: {formatCurrency(P)}</p>
-        <p>Total amount necessary to retire in {totalYearsOfSaving} years: {formatCurrency(calculateTotalSHoulInvest())}</p>
-     <p>So to continue having the same life style as you are having today, you will needd a minimal monthly investment of {formatCurrency(P)}. </p>
-     <strong>Remember, &rdquo;minimal&rdquo;</strong>
+        <input
+          type="number"
+          id="SandP500-last-ten-years"
+          value={rate}
+          onChange={(e) => setRate(e.target.value)}
+        />
+      </label>
+      <p>Monthly investment necessary to retire: {formatCurrency(P)}</p>
+      <p>
+        Total amount necessary to retire in {totalYearsOfSaving.toFixed(0)}{" "}
+        years: {formatCurrency(calculateTotalSHoulInvest())}
+      </p>
+      <hr />
+      <p>
+        So, to continue having the same life style as you are having today, you
+        will need a minimal monthly investment of {formatCurrency(P)}.{" "}
+      </p>
+      <p>
+        Remember, &rdquo;minimal&rdquo;. And without considering life expectancy
+      </p>
+      <ul>
+        Life expectancy in the USA:
+        <li>Female: 79.3,</li>
+        <li>males: 73.5.</li>
+        <li>Average: 76.1 years of age.</li>
+      </ul>
+      <hr />
+      <p>So considering this, a new approach is necessary.</p>
+      <ul>
+        Some good rules could be follwed:
+        <li>&#8226;
+            invest at least 15% of your salary;</li>
+        <li>&#8226;
+          There is no good investing while in debt ( saved in some cases for a
+          mortgage);
+        </li>
+        <li>&#8226;
+          having at least 2 years of expenses covered in an emergency fund;
+        </li>       
+      </ul>
     </div>
   );
 };
