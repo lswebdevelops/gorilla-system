@@ -43,6 +43,8 @@ import CompoundInterest from "./pages/financial_pages/CompoundInterest";
 import MainItemsDetails from "./pages/mainitems_pages/MainItemsDetails";
 import MainItemsLayout from "./components/layouts/MainItemsLayout";
 import NotFound from './pages/NotFound';
+import Comparing from "./pages/networth_pages/Comparing";
+import WantToRetire from "./pages/financial_pages/WantToRetire";
 
 const App = () => {
   const [portfolioItems, setPortfolioItems] = useState([]);
@@ -132,11 +134,9 @@ const App = () => {
           
           <Route path="networth" element={<NetworthLayout />}>
             <Route path="networth" element={<Consolidated />} />
-            <Route
-              path="networth/diversification/"
-              element={<Diversification />}
-            />
+            <Route path="networth/diversification/" element={<Diversification />}/>
             <Route path="networth/holding" element={<Holding />} />
+            <Route path="networth/comparing" element={<Comparing />} />
           </Route>
           <Route path="assets" element={<AssetsLayout />}>
             <Route path="bonds" element={<Bonds />} />
@@ -195,6 +195,10 @@ const App = () => {
               <Route
                 path="investments/compoundinterest"
                 element={<CompoundInterest />}
+              />
+              <Route
+                path="investments/wanttoretire"
+                element={<WantToRetire />}
               />
             </Route>
             <Route  path="finances/personalfinances" element={<PersonalFinancesLayout />}>

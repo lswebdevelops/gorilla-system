@@ -12,17 +12,17 @@ import DebtPopup from "../../components/popups/DebtPopup";
 
 const Consolidated = () => {
   const [inputValues, setInputValues] = useState({
-    emergencyFundInput: 0,
-    brazilianStocksInput: 0,
-    bondsInput: 0,
-    brazilianRealEstateInput: 0,
-    otherInput: 0,
-    reitsInput: 0,
-    brazilianTreasureInput: 0,
-    stocksInput: 0,
+    emergencyFundInput: 20,
+    brazilianStocksInput: 20,
+    bondsInput: 10,
+    brazilianRealEstateInput: 10,
+    otherInput: 10,
+    reitsInput: 10,
+    brazilianTreasureInput: 10,
+    stocksInput: 10,
   });
 
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(100);
 
   // function to handle input changes
   const handleInputChanges = (event) => {

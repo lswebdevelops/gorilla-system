@@ -7,6 +7,7 @@ const NetworthLayout = () => {
         <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/"}>Consolidated</NavLink>
         <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/diversification"}>Diversification</NavLink>
         <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/holding"}> Holding </NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "link-active" : null)} to={"networth/comparing"}> Comparing </NavLink>
       </nav>
       <Outlet />
     </>

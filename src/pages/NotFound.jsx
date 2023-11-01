@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
     return (
         <div className='div-return-home'>
-        <h1>Oops! The page not found.</h1>
+        <h1>Oops! Page not found.</h1>
             <img src="https://raw.githubusercontent.com/lswebdevelops/gorilla-system/main/src/assets/images/404.png" alt="Page not found!" />
             <br />
             <Link 
