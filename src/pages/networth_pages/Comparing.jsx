@@ -4,7 +4,7 @@ const Comparing = () => {
       <h1>Comparing</h1>
       <p>
         Here you are going to be able to compare the percentage of your
-        investiments to other people!
+        investiments to others.
       </p>
 
       <div>

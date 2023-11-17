@@ -3,8 +3,8 @@ import "../../styles/CompoundInterest.css";
 import { Chart } from "react-google-charts";
 
 const CompoundInterest = () => {
-  const [principal, setPrincipal] = useState(10000);
-  const [monthlyPayment, setMonthlyPayment] = useState(1000);
+  const [principal, setPrincipal] = useState(1000);
+  const [monthlyPayment, setMonthlyPayment] = useState(100);
   const [months, setMonths] = useState(360);
   const [rate, setRate] = useState(12);
   const [result, setResult] = useState("");
@@ -64,7 +64,8 @@ const CompoundInterest = () => {
 
   // Format number with commas and dots
   const formatResult = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return `$${formattedNumber}`
   };
   
   return (
